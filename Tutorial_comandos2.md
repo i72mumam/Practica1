@@ -1,4 +1,6 @@
-# **INTRODUCCION A GIT**
+# TUTORIAL GIT
+
+## INTRODUCCION A GIT
 
 1. Introducción.
 2. Instalación y cofiguración.
