@@ -299,3 +299,31 @@ Log con los tres últimos commits en una línea:
 
 &nbsp;
 Para más opciones consultar documentación de git
+
+
+&nbsp;
+Comandos básicos VII
+
+
+&nbsp;
+Examinar el contenido de un commit:
+
+
+&nbsp;
+`git  show <id >`
+
+
+&nbsp;
+Comparar un commit con el actual:
+
+
+&nbsp;
+`git  diff <id > nombre_archivo`
+
+
+&nbsp;
+Comparar dos commits:
+
+
+&nbsp;
+`git  diff id..id  nombre_archivo`
