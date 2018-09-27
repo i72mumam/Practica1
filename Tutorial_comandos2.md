@@ -121,7 +121,7 @@ Ayuda del listado anterior:
 
 
 &nbsp;
-Listar los 5 commits mas recientes:
+Listar los 5 commits más recientes:
 
 
 &nbsp;
