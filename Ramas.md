@@ -29,3 +29,35 @@
 `git  diff  nombre_rama .. nombre_rama`
 
 &nbsp;
+# Comandos Ramas II
+1.Ver ramas idénticas a la actual:
+
+&nbsp;
+`git  branch  --merged`
+
+&nbsp;
+2.Renombrar ramas:
+
+&nbsp;
+`git  branch  -m nombre_antiguo  nombre_nuevo`
+
+&nbsp;
+3.Eliminar ramas
+
+&nbsp;
+~~~
+git  branch  -d nombre_rama
+git  branch  -D nombre_rama
+~~~
+
+&nbsp;
+4.Integrar ramas a la actual:
+
+&nbsp;
+`git  merge  nombre_rama`
+
+&nbsp;
+5.Resolver confictos (se suele hacer manualmente):
+
+&nbsp;
+`git  merge  --abort`
