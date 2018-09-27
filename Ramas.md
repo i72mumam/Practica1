@@ -174,3 +174,22 @@ git  merge  origin/master
 
 &nbsp;
 `git  pull`
+# Operaciones con branches remotos
+### Creación:
+1.Crear branch local.
+
+&nbsp;
+2.Hacer cambios en dicho branch.
+
+&nbsp;
+3.Hacer commit.
+
+&nbsp;
+4.Copiar el branch al repositorio remoto:
+
+&nbsp;
+`git  push -u origin  branch_remoto`
+### Copia:
+`git  checkout  -b local  remoto`
+### Eliminación:
+`git  push  origin  --delete  branch_remoto`
