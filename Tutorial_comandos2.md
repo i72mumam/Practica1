@@ -266,3 +266,36 @@ Eliminar archivos que git no controla:
 
 &nbsp;
 Ignorar archivos en el repositorio: .gitignore
+
+
+&nbsp;
+## Comandos básicos VI
+
+
+&nbsp;
+Listar el contenido del repositorio de git:
+
+~~~
+git ls-tree  master
+git ls-tree  master ^^^
+git ls-tree  master ~3
+~~~
+
+&nbsp;
+Log en una línea:
+
+
+&nbsp;
+`git  log  --oneline`
+
+
+&nbsp;
+Log con los tres últimos commits en una línea:
+
+
+&nbsp;
+`git  log  --oneline  -3`
+
+
+&nbsp;
+Para más opciones consultar documentación de git
