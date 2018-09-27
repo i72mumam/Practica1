@@ -1,4 +1,4 @@
-# Comandos Ramas I
+## Comandos Ramas I
 1.Ver listado de ramas:
 
 &nbsp;
@@ -29,7 +29,7 @@
 `git  diff  nombre_rama .. nombre_rama`
 
 &nbsp;
-# Comandos Ramas II
+## Comandos Ramas II
 1.Ver ramas idénticas a la actual:
 
 &nbsp;
@@ -67,7 +67,7 @@ git  branch  -D nombre_rama
 
 
 &nbsp;
-# Comandos Ramas III
+## Comandos Ramas III
 1.Almacenar cambios temporales:
 
 &nbsp;
@@ -101,7 +101,7 @@ stash
 git  stash  apply  nombre_stash
 git  stash  pop  nombre_stash
 ~~~
-# Comandos GitHub I
+## Comandos GitHub I
 1.Añadir repositorio remoto:
 
 &nbsp;
@@ -130,7 +130,7 @@ git  stash  pop  nombre_stash
 
 &nbsp;
 `git  pull`
-# Comandos GitHub II
+## Comandos GitHub II
 1.Ver
 branches
 remotos:
@@ -149,8 +149,8 @@ remotos:
 
 &nbsp;
 `git  clone  url`
-# Dar seguimiento a branches remotos
-### LOCAL-->REMOTO
+## Dar seguimiento a branches remotos
+#### LOCAL-->REMOTO
 
 1.Cambios en el repositorio local.
 
@@ -162,7 +162,7 @@ remotos:
 
 &nbsp;
 `git  push`
-### REMOTO-->LOCAL
+#### REMOTO-->LOCAL
 1.Sincronización y unión:
 ~~~
 git  fetch  origin
@@ -174,8 +174,8 @@ git  merge  origin/master
 
 &nbsp;
 `git  pull`
-# Operaciones con branches remotos
-### Creación:
+## Operaciones con branches remotos
+#### Creación:
 1.Crear branch local.
 
 &nbsp;
@@ -189,7 +189,7 @@ git  merge  origin/master
 
 &nbsp;
 `git  push -u origin  branch_remoto`
-### Copia:
+#### Copia:
 `git  checkout  -b local  remoto`
-### Eliminación:
+#### Eliminación:
 `git  push  origin  --delete  branch_remoto`
