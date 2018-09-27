@@ -265,4 +265,4 @@ Eliminar archivos que git no controla:
 
 
 &nbsp;
-Ignorar archivos en el repositorio: .gitignor
+Ignorar archivos en el repositorio: .gitignore
