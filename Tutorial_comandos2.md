@@ -232,3 +232,37 @@ Revertir un commit:
 
 &nbsp;
 `git  revert  <id_commit >`
+
+
+&nbsp;
+## Comandos básicos V
+
+
+&nbsp;
+Deshacer multiples cambios en el repositorio:
+
+~~~
+git  reset  --soft <id_commit >
+git  reset  --mixed  <id_commit >
+git  reset  --hard <id_commit >
+~~~
+
+
+&nbsp;
+Listar archivos que git no controla:
+
+
+&nbsp;
+`git  clean  -n`
+
+
+&nbsp;
+Eliminar archivos que git no controla:
+
+
+&nbsp;
+`git  clean  -f`
+
+
+&nbsp;
+Ignorar archivos en el repositorio: .gitignor
