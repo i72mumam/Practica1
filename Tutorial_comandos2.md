@@ -219,7 +219,7 @@ Complementar último commit:
 
 
 &nbsp;
-Recuperar version de un  chero de commit antiguo:
+Recuperar version de un fichero de commit antiguo:
 
 
 &nbsp;
