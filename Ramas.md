@@ -44,7 +44,7 @@
 &nbsp;
 3.Eliminar ramas
 
-&nbsp;
+
 ~~~
 git  branch  -d nombre_rama
 git  branch  -D nombre_rama
@@ -101,3 +101,32 @@ stash
 git  stash  apply  nombre_stash
 git  stash  pop  nombre_stash
 ~~~
+# Comandos GitHub I
+1.Añadir repositorio remoto:
+
+&nbsp;
+`git  remote  add  origin  url`
+
+&nbsp;
+2.Ver repositorios remotos:
+
+&nbsp;
+`git  remote  -v`
+
+&nbsp;
+3.Eliminar repositorio remoto:
+
+&nbsp;
+`git  remote  rm  origin`
+
+&nbsp;
+4.Añadir cambios del repositorio local al remoto:
+
+&nbsp;
+`git  push -u origin  master`
+
+&nbsp;
+5.Añadir cambios del repositorio remoto al local:
+
+&nbsp;
+`git  pull`
