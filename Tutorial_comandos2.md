@@ -188,3 +188,47 @@ Mover o renombrar archivos:
 git mv  antiguo  nuevo
 git  commit  -m "Mensaje"
 ~~~
+
+
+&nbsp;
+## Comandos básicos IV
+
+
+&nbsp;
+Deshacer cambios con git:
+
+
+&nbsp;
+`git  checkout  -- nombre_fichero`
+
+
+&nbsp;
+Retirar archivos del staging:
+
+
+&nbsp;
+`git  reset  HEAD  nombre_fichero`
+
+
+&nbsp;
+Complementar último commit:
+
+
+&nbsp;
+`git  commit  --amend  -m "Mensaje"`
+
+
+&nbsp;
+Recuperar version de un  chero de commit antiguo:
+
+
+&nbsp;
+`git  checkout  <id_commit > -- nombre_archivo`
+
+
+&nbsp;
+Revertir un commit:
+
+
+&nbsp;
+`git  revert  <id_commit >`
