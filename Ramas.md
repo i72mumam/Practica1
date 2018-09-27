@@ -1,5 +1,7 @@
 # Comandos Ramas I
 1.Ver listado de ramas:
+
+&nbsp;
 `git  branch`
 2.Crear una rama:
 `git  branch  nombre_rama`
