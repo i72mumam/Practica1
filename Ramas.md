@@ -130,3 +130,22 @@ git  stash  pop  nombre_stash
 
 &nbsp;
 `git  pull`
+# Comandos GitHub II
+1.Ver
+branches
+remotos:
+
+&nbsp;
+`git  branch  -r`
+
+&nbsp;
+2.Ver todos los branches:
+
+&nbsp;
+`git  branch  -a`
+
+&nbsp;
+3.Clonar un repositorio remoto:
+
+&nbsp;
+`git  clone  url`
