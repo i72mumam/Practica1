@@ -53,11 +53,14 @@ git  branch  -D nombre_rama
 &nbsp;
 4.Integrar ramas a la actual:
 
+
 &nbsp;
 `git  merge  nombre_rama`
 
+
 &nbsp;
 5.Resolver confictos (se suele hacer manualmente):
+
 
 &nbsp;
 `git  merge  --abort`
