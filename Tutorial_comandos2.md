@@ -1,13 +1,13 @@
 # **INTRODUCCION A GIT**
 
 1. Introducción.
-1 Instalación y cofiguración.
-1 Uso básico.
-1 Ramas.
-1 Github.
+2. Instalación y cofiguración.
+3. Uso básico.
+4. Ramas.
+5. Github.
 
 
-![ :Sistema para el control distribuido de versiones de código. Fundamentalmente permite:](https://www.redeszone.net/app/uploads/2013/03/Git-Logo.png?x=480)
+![Sistema para el control distribuido de versiones de código. Fundamentalmente permite:](https://www.redeszone.net/app/uploads/2013/03/Git-Logo.png?x=480)
 
  * Dar seguimiento a los cambios realizados sobre un archivo.
  * Almacenar una copia de los cambios.
