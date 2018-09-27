@@ -98,7 +98,11 @@ Hacer los dos pasos anteriores en uno:
 
 &nbsp;
 `git  commit  -am "Mensaje"`
+
+
 &nbsp;
 Historial de commits:
+
+
 &nbsp;
 `git  log`
