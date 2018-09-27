@@ -150,3 +150,45 @@ Ver cambios en el directorio:
 
 &nbsp;
 `git  status`
+
+
+&nbsp;
+## Comandos básicos III
+
+
+&nbsp;
+Ver diferencia entre ficheros en el directorio y el repositorio de git:
+
+
+&nbsp;
+`git  diff`
+
+
+&nbsp;
+Ver diferencia entre ficheros en el staging y el repositorio:
+
+
+&nbsp;
+`git  diff  --staged`
+
+
+&nbsp;
+Eliminar archivos:
+
+~~~
+
+git rm  archivo
+git  commit  -m "Mensaje"
+
+~~~
+
+
+&nbsp;
+Mover o renombrar archivos:
+
+~~~
+
+git mv  antiguo  nuevo
+git  commit  -m "Mensaje"
+
+~~~
