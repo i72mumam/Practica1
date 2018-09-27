@@ -302,7 +302,7 @@ Para más opciones consultar documentación de git
 
 
 &nbsp;
-Comandos básicos VII
+## Comandos básicos VII
 
 
 &nbsp;
