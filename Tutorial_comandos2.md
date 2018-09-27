@@ -18,44 +18,41 @@ Para instalar Git: https://git-scm.com.	(En el curso se utilizará Git a través
 ## Configuración básica
 
 
-&nbsp
+&nbsp;
 Nombre del administrador:
 
 
-&nbsp
+&nbsp;
 `git  config  --global  user.name "Antonio M. Durán  Rosal"`
 
 
-&nbsp
-
-
-&nbsp
+&nbsp;
 Correo electrónico:
 
 
-&nbsp
+&nbsp;
 `git  config  --global  user.email  aduran@uco.es`
 
 
-&nbsp
+&nbsp;
 Editor de texto:
 
 
-&nbsp
+&nbsp;
 `git  config  --global  core.editor "gedit"`
 
 
-&nbsp
+&nbsp;
 Color de la interfaz:
 
 
-&nbsp
+&nbsp;
 `git  config  --global  color.ui true`
 
 
-&nbsp
+&nbsp;
 Listado de la configuración:
 
 
-&nbsp
+&nbsp;
 `git  config  --list`
