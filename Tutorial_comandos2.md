@@ -176,10 +176,8 @@ Ver diferencia entre ficheros en el staging y el repositorio:
 Eliminar archivos:
 
 ~~~
-
 git rm  archivo
 git  commit  -m "Mensaje"
-
 ~~~
 
 
@@ -187,8 +185,6 @@ git  commit  -m "Mensaje"
 Mover o renombrar archivos:
 
 ~~~
-
 git mv  antiguo  nuevo
 git  commit  -m "Mensaje"
-
 ~~~
