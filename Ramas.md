@@ -96,7 +96,7 @@ git  branch  -D nombre_rama
 stash
 :
 
-&nbsp;
+
 ~~~
 git  stash  apply  nombre_stash
 git  stash  pop  nombre_stash
