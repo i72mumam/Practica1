@@ -64,3 +64,40 @@ git  branch  -D nombre_rama
 
 &nbsp;
 `git  merge  --abort`
+
+
+&nbsp;
+# Comandos Ramas III
+1.Almacenar cambios temporales:
+
+&nbsp;
+`git  stash  save "Mensaje"`
+
+&nbsp;
+2.Listar cambios:
+
+&nbsp;
+`git  stash  list`
+
+&nbsp;
+3.Ver contenido de un cambio temporal:
+
+&nbsp;
+`git  stash  show -p nombre_stash`
+
+&nbsp;
+4.Eliminar un cambio temporal:
+
+&nbsp;
+`git  stash  drop  nombre_stash`
+
+&nbsp;
+5.Aplicar cambio del
+stash
+:
+
+&nbsp;
+~~~
+git  stash  apply  nombre_stash
+git  stash  pop  nombre_stash
+~~~
