@@ -4,7 +4,7 @@
 
 Como usuario quiero poder modificar un alumno de la clase.
 
-**Prioridad:** 4
+**Prioridad:** 3
 
 ##(REVERSO)
 
