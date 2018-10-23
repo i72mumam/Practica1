@@ -4,9 +4,9 @@
 
 Como usuario quiero poder buscar un alumno de la clase.
 
-**Prioridad:** 3
+**Prioridad:** 1
 
 ## (REVERSO)
 
-* Quiero poder ver si se ha encontrado el alumno
-* Debe buscarse por DNI o por apellido
+* Quiero poder ver si se ha encontrado el alumno.
+* Debe buscarse por DNI o por apellido.
