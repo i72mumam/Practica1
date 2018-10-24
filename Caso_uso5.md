@@ -2,7 +2,7 @@
 
 **ID:** 005
 
-**Breve descripción:** El sistema Borrar los datos de un alumno
+**Breve descripción:** El sistema Borrar los datos de un alumno.
 
 
 **Actores principales:** Usuario.

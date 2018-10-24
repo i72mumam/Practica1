@@ -2,7 +2,7 @@
 
 **ID:** 006
 
-**Breve descripción:** El sistema muestra a todos los alumnos
+**Breve descripción:** El sistema muestra a todos los alumnos.
 
 
 **Actores principales:** Usuario.
@@ -16,7 +16,7 @@
 **Flujo principal:**
 
   1. El caso de uso empieza cuando el sistema necesita mostrar a todos los alumnos.
-  2. El sistema recoge los datos de todos los alumnos
+  2. El sistema recoge los datos de todos los alumnos.
 
 **Postcondiciones:**
 

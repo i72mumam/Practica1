@@ -2,7 +2,7 @@
 
 **ID:** 004
 
-**Breve descripción:** El sistema muestra los datos de un alumno
+**Breve descripción:** El sistema muestra los datos de un alumno.
 
 
 **Actores principales:** Usuario.
