@@ -1,9 +1,11 @@
 **Buscar alumno**
 
 **ID:** 001
+
 **Breve descripción:** El sistema busca a un alumno.
 
 **Actores principales:** Usuario.
+
 **Actores secundarios:** Alumno.
 
 **Precondiciones:**
