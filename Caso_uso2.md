@@ -5,8 +5,6 @@
 **Breve descripción:** El sistema modifica los datos de un alumno.
 
 
-
-
 **Actores principales:** Usuario.
 
 **Actores secundarios:** Alumno.

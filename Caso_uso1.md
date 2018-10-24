@@ -4,7 +4,7 @@
 
 **Breve descripción:** El sistema busca a un alumno.
 
-&nbsp;
+
 **Actores principales:** Usuario.
 
 **Actores secundarios:** Alumno.
@@ -20,7 +20,7 @@
 
 **Postcondiciones:**
 
-  * El sistema muestra si el alumno se encuentra registrado en el sistema.
+  * El sistema muestra por pantalla si el alumno se encuentra registrado en el sistema.
 
 **Flujos alternativos:**
 
