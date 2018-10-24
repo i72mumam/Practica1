@@ -20,7 +20,7 @@
 
 **Postcondiciones:**
 
-  *  El sistema permite al usuario modificar los datos del alumno.
+  * El sistema permite al usuario modificar los datos del alumno.
 
 **Flujos alternativos:**
 

@@ -1,8 +1,8 @@
-**Mostrar alumno**
+**Borrar alumno**
 
-**ID:** 004
+**ID:** 005
 
-**Breve descripción:** El sistema muestra los datos de un alumno
+**Breve descripción:** El sistema Borrar los datos de un alumno
 
 
 **Actores principales:** Usuario.
@@ -15,12 +15,12 @@
 
 **Flujo principal:**
 
-  1. El caso de uso empieza cuando el sistema necesita mostrar un alumno.
+  1. El caso de uso empieza cuando el sistema necesita borrar a un alumno.
   2. El sistema recoge los datos de un alumno.
 
 **Postcondiciones:**
 
-  * El sistema muestra al alumno por pantalla.
+  * El sistema borra al alumno del sistema.
 
 **Flujos alternativos:**
 
