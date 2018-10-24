@@ -4,6 +4,7 @@
 
 **Breve descripción:** El sistema busca a un alumno.
 
+&nbsp;
 **Actores principales:** Usuario.
 
 **Actores secundarios:** Alumno.
