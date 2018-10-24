@@ -2,9 +2,9 @@
 
 **ID**: 004 **Mostrar alumno**
 
-Como usuario quiero poder visualizar la imagen y el nombre completo de un alumno de la clase.
+Como usuario quiero poder visualizar el nombre completo de un alumno de la clase.
 
-**Prioridad:** 3
+**Prioridad:** 2
 
 ## (REVERSO)
 
