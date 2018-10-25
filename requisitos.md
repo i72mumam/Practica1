@@ -1,4 +1,4 @@
 #Requisitos
 ###Partes interesadas
-#####·Cliente
-#####·Desarrolladores
+#####Cliente
+#####Desarrolladores
