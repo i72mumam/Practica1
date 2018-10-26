@@ -6,7 +6,7 @@
 Como usuario quiero insertar alumnos
 
 
-**Prioridad:**3
+**Prioridad:** 3
 # (REVERSO)
 · Quiero que se pueda insertar alumnos
 
