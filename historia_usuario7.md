@@ -2,8 +2,13 @@
 **ID:** 007 **Insertar alumno**
 
 
-&nbsp
+
 Como usuario quiero insertar alumnos
 
-&nbsp
+
 **Prioridad:**3
+# (REVERSO)
+· Quiero que se pueda insertar alumnos
+
+
+· Y como mínimo necesite el DNI, apellidos y nombre
