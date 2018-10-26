@@ -1,5 +1,5 @@
 # (ANVERSO)
-** ID: ** 007 **Insertar alumno**
+**ID:** 007 **Insertar alumno**
 
 
 &nbsp
