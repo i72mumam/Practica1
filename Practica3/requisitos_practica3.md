@@ -8,7 +8,7 @@
 3. *Apellidos*
 4. *Líder o no*
 5. *Número equipo*
-6. *Mail*
+6. *e-mail*
 7. *Curso más alto matriculado*
 8. *Teléfono*
 9. *Dirección*
@@ -35,7 +35,6 @@
 2. *Sistema pueda cargar un archivo binario*
 3. *Para añadir un alumno se necesita mínimo DNI y apellido*
 4. *El número máximo de alumnos es 150*
-5. *Si insertamos a un alumno como líder y ya hay líder en el grupo, no se podrá añadir al alumno como líder*
-6. *Los datos deben almacenarse en un fichero binario*
-7. *Se considera la posibilidad de que haya varios profesores, cada uno con una credencial*
-8. *Los profesores se dividirán en coordinador y ayudantes*
+5. *Los datos deben almacenarse en un fichero binario*
+6. *Se considera la posibilidad de que haya varios profesores, cada uno con una credencial*
+7. *Los profesores se dividirán en coordinador y ayudantes*
