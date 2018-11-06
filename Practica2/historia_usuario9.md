@@ -8,4 +8,5 @@ Como usuario quiero borrar los datos de los alumnos.
 
 **Prioridad:** 3
 # (REVERSO)
-· Quiero que se pueda borrar todos los datos.
+
+* Quiero que se pueda borrar todos los datos.

@@ -29,10 +29,10 @@
 **Postcondiciones**
 
 
-·El sistema guarda en la base de datos, los datos sobre el alumno.
+* El sistema guarda en la base de datos, los datos sobre el alumno.
 
 
 **Flujos alternativos**
 
 
-· Si no se inserta el nombre, apellido y DNI del alumno, el sistema dará error al insertar el alumno.
+2.a. Si no se inserta el nombre, apellido y DNI del alumno, el sistema dará error al insertar el alumno.
