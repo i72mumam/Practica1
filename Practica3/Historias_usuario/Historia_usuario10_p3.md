@@ -6,7 +6,7 @@
 Como usuario quiero poder cargar en caso de pérdida de datos una copia de seguridad.
 
 
-**Prioridad:** 1
+**Prioridad:** 4
 
 # (REVERSO)
 
