@@ -6,6 +6,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <list>
+#include <fstream>
 
 #include "persona.h"
 
@@ -32,8 +33,10 @@ inline void setRol(bool Rol){Rol_=Rol;};
 inline bool getRol(){return Rol_;};
 
 bool AccederSistema(string Credencial);
-void AltaProfesor(string DNI, string NombreCompleto, string Email, bool Rol);
-
+void AltaProfesor();
+void BajaProfesor();
+void CrearBackup(int Rol);
+void CargarBackup(int Rol);
 };
 
 #endif

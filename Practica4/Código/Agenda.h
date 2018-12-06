@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <list>
+#include <fstream>
 
 #include "Persona.h"
 #include "Alumno.h"
@@ -34,7 +35,7 @@ private:
   void BorrarAlumno(string DNI);
   void InsertarAlumno(string DNI);
   void MostrarTodosAlumnos();
-  void ExisteALumno(string DNI);
+  bool ExisteALumno(string DNI);
 
 };
 
