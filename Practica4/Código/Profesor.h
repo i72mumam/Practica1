@@ -37,6 +37,8 @@ void AltaProfesor();
 void BajaProfesor();
 void CrearBackup(int Rol);
 void CargarBackup(int Rol);
+void menuCoordinador();
+void menuAyudante();
 };
 
 #endif

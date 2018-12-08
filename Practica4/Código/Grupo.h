@@ -18,24 +18,17 @@ private:
 public: Grupo(string Lider_Grupo, int NumMiembros=0, int Numgrupo, string v[]){
     Lider_Grupo_=Lider_Grupo;
     NumMiembros_=NumMiembros;
-    Numgrupo_=Numgrupo;
+    NumGrupo_=NumGrupo;
     v_[]=v[];
 };
 
 inline string getLider(){return Lider_Grupo_;};
 inline void setLider(string Lider_Grupo){Lider_Grupo_=Lider_Grupo }
 
-void setMiembro();
-inline void getMiembros(string v[]){
-  int i;
-  for(i=0;i<=NumMiembros;i++){
-      cout << v[i] << '\n';
-  }
-}
-
-void borrarIntegrante(string DNI, int Numgrupo);
+void borrarIntegrante(string DNI, int NumGrupo);
 void modificarGrupo(string v[]);
-void borrarGrupo(int Numgrupo);
+void borrarGrupo(, int NumMiembros, int NumGrupo);
+void mostrarGrupo(int NumGrupo)
 
 
 };
