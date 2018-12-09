@@ -11,6 +11,9 @@ Como usuario quiero poder acceder al sistema mediante la credencial de cada prof
 * Se debe introducir la credencial personal para acceder.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
+
 
 # (ANVERSO)
 
@@ -24,6 +27,8 @@ Como usuario quiero poder salir del sistema.
 
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -39,6 +44,9 @@ Como usuario quiero poder buscar un alumno de la clase.
 * Quiero poder ver si se ha encontrado el alumno.
 * Debe buscarse por DNI o por apellido.
 * Pueden acceder tanto el coordinador como los ayudantes.
+
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -57,6 +65,8 @@ Como usuario quiero comprobar la existencia de alumnos
 * Como mínimo se necesita para comprobarlo el DNI.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -73,6 +83,8 @@ Como usuario quiero poder modificar un alumno de la clase.
 * Debe buscarse por DNI.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -88,6 +100,8 @@ Como usuario quiero poder modificar al lider de cualquier grupo.
 * Debe buscarse por DNI.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -104,7 +118,8 @@ Como usuario quiero poder borrar los datos de un alumno de la clase.
 * En caso de ser líder de un grupo, dicho grupo quedará temporalmente sin líder, hasta que el usuario asigne un nuevo líder.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
-
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -123,6 +138,8 @@ Como usuario quiero insertar alumnos
 * Y como mínimo necesite el DNI, apellidos y nombre.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -139,6 +156,8 @@ Como usuario quiero poder dar de alta a un profesor.
 * Y como mínimo necesite el DNI, apellidos y nombre.
 * Puede acceder sólo el coordinador.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -153,6 +172,9 @@ Como usuario quiero poder dar de baja a un profesor.
 
 * Quiero poder borrar todos los datos de un profesor.
 * Puede acceder sólo el coordinador.
+
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -169,6 +191,8 @@ Como usuario quiero poder visualizar el nombre completo de un alumno de la clase
 * Se debe mostrar si el alumno es líder o no.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -186,6 +210,8 @@ Como usuario quiero poder visualizar el nombre completo de todos los alumnos.
 * Se debe preguntar al usuario de que forma quiere ordenar a los alumnos.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -203,6 +229,8 @@ Como usuario quiero borrar los datos de los alumnos.
 * Quiero que se pueda borrar todos los datos.
 * Pueden acceder tanto el coordinador como los ayudantes.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -221,6 +249,8 @@ Como usuario quiero poder cargar en caso de pérdida de datos una copia de segur
 * La copia de seguridad tiene que estar actualizada con todos los datos.
 * Puede acceder sólo el coordinador.
 
+### Tiempo estimado:
+  60 minutos
 
 
 # (ANVERSO)
@@ -236,3 +266,10 @@ Como usuario quiero poder cargar en caso de pérdida de datos una copia de segur
 * Quiero que insertando el sistema tenga una copia de seguridad para poder cargarla el usuario en cualquier momento.
 * La copia de seguridad tiene que estar actualizada con todos los datos.
 * Puede acceder sólo el coordinador.
+
+### Tiempo estimado:
+  60 minutos
+
+
+## Tiempo estimado para el proyecto:
+  20 horas
