@@ -11,7 +11,6 @@ ListaAlumnos Alumnos;
     entrada.open("Alumnos.bin", ios::in| ios:binary);
       if(entrada.is_open()){
         while(getline(entrada,linea, ' ')){
-          for(NumMiembros;NumMiembros>0;NumMiembros--){
             if(Alumnos.Grupo_==NumGrupo){
                 setGrupo(NULL);
             }
@@ -30,7 +29,6 @@ void Grupo:: mostrarGrupo(int NumGrupo){
       entrada.open("Alumnos.bin", ios::in| ios:binary);
         if(entrada.is_open()){
           while(getline(entrada,linea, ' ')){
-            for(NumMiembros;NumMiembros>0;NumMiembros--){
               if(Alumnos.Grupo_==NumGrupo){
                 cout<<linea<<endl;
               }

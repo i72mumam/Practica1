@@ -23,7 +23,7 @@ typedef struct ListaAlumnos{
 class Agenda{
 
 private:
-    list <ListaAlumnos> Lista_Alumnos_;
+    list <ListaAlumnos> ListaAlumnos_;
 
   public:
 

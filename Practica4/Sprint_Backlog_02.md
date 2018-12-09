@@ -12,7 +12,7 @@
   * Dar de baja un profesor
   * Borrar todos los alumnos
   * Mostrar alumno
-  * Modificar grupo
+  * Añadir Integrante
 
 ## Miguel Ángel Muñoz Martín:
 

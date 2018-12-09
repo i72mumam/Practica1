@@ -81,12 +81,21 @@ void Agenda:: menuAyudante(){
 }
 
 
-void Profesor:: AccederSistema(string Credencial){
-
-  if(Credencial==True){
-      menuCoordinador();
-  }
-  else{
-      menuAyudante();
-  }
-}
+void Profesor:: AccederSistema(Credencial){
+ListaProfesores Lista;
+string linea;
+  ifstream entrada;
+  entrada.open("Profesores.bin", ios::in| ios:binary);
+    if(entrada.is_open()){
+      while(getline(entrada,linea, ' ')){
+        if(Lista.Credencial==Credencial){
+            if(Lista.Rol==1){
+                menuCoordinador();
+            }
+            else{
+              menuAyudante();
+            }
+        }
+      }
+    }
+}  
