@@ -1,7 +1,10 @@
 
 #include "Alumno.h"
 
-bool Agenda::InsertarAlumno(string DNI){
+using namespace std;
+
+
+bool Alumno::InsertarAlumno(string DNI){
 ListaAlumnos Alumnos;
 string linea;
   ifstream entrada;
@@ -15,4 +18,20 @@ string linea;
       else {
         cout<<"El alumno se guarda en la base de datos"<<endl;
   return true;
+}
+}
+void Alumno::borraralumno(string DNI){
+  ListaAlumnos Alumnos;
+  string linea;
+   ifstream entrada;
+   entrada.open("Alumnos.bin", ios::in| ios:binary);
+     if(entrada.is_open()){
+       while(getline(entrada,linea, ' ')){
+           if(Alumnos.DNI_==DNI){
+               setAlumno(NULL);
+           }
+       }
+       else{
+       cout<<"El fichero no se abrió correctamente"<<endl;
+       }
 }
