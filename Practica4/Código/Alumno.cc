@@ -1,7 +1,7 @@
 
 #include "Alumno.h"
 
-bool Agenda::ExisteAlumno(string DNI){
+bool Agenda::InsertarAlumno(string DNI){
 ListaAlumnos Alumnos;
 string linea;
   ifstream entrada;

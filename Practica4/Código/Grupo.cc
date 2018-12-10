@@ -1,5 +1,5 @@
 #include "Grupo.h"
-##include "Alumno.h"
+#include "Alumno.h"
 
 using namespace std;
 
