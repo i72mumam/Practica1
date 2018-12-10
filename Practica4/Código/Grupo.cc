@@ -8,11 +8,12 @@ bool Grupo:: AnadirIntegrante(string DNI, int NumGrupo){
     string linea;
       ifstream entrada;
       entrada.open("Alumnos.bin", ios::in| ios:binary);
-         while(getline(entrada,linea, ' ')){
-            if(Alumnos.DNI==DNI)&&(Alumnos.NumGrupo==NumGrupo;){
-                cout<<"El alumno ya existe"<<endl;
-            return false;
+        while(getline(entrada,linea, ' ')){
+            if(Alumnos.DNI==DNI)&&(Grupo.NumGrupo==NumGrupo){
+                return false;
             }
-          return true;
-}
+            else{
+                return true;
+            }
+        }
 }
