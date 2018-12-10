@@ -20,3 +20,18 @@ string linea;
   return true;
 }
 }
+void Alumno::borraralumno(string DNI){
+  ListaAlumnos Alumnos;
+  string linea;
+   ifstream entrada;
+   entrada.open("Alumnos.bin", ios::in| ios:binary);
+     if(entrada.is_open()){
+       while(getline(entrada,linea, ' ')){
+           if(Alumnos.DNI_==DNI){
+               setAlumno(NULL);
+           }
+       }
+       else{
+       cout<<"El fichero no se abrió correctamente"<<endl;
+       }
+}
