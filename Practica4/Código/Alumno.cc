@@ -51,16 +51,16 @@ void Agenda::BorrarTodosAlumnos(){
   if(entrada.is_open()){
     while(getline(entrada,linea,' ')){
         if(Alumnos.DNI_==DNI){
-          setDNI(NULL);
+          SetDNI(NULL);
         }
         if(Alumnos.NombreCompleto_==NombreCompleto){
-          setNombreCompleto(NULL);
+          SetNombreCompleto(NULL);
         }
         if(Alumnos.Edad_==Edad){
-          setEdad(NULL);
+          SetEdad(NULL);
         }
         if(Alumnos.Email_==Email){
-          setEmail(NULL);
+          SetEmail(NULL);
         }
     }
     else{
