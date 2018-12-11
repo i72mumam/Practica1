@@ -8,19 +8,16 @@
 #include <list>
 #include <fstream>
 
-#include "persona.h"
+#include "Persona.h"
 
 using namespace std;
 
-typedef struct ListaProfesores{
-  string Credendial_;
-  int Rol_;
-} ListaAlumnos;
-
-class Profesor:   Public Persona{
+class Profesor : public Persona{
 
 private:
-  list <ListaProfesores> ListaProfesores_;
+  string Credencial_;
+  int Rol_;
+  list <Profesor> ListaProfesores_;
 
 public:
 
@@ -30,13 +27,13 @@ public:
                 Rol_=Rol;
           };
 
-inline void setCredencial(string Credencial_){Credencial_=Credencial;};
+inline void setCredencial(string Credencial){Credencial_=Credencial;};
 inline string GetCredencial(){ return Credencial_;};
 
 inline void setRol(bool Rol){Rol_=Rol;};
 inline int getRol(){return Rol_;};
 
-bool AccederSistema(string Credencial);
+bool AccederSistema(string Credencial, int Rol);
 void AltaProfesor();
 void BajaProfesor();
 void CrearBackup(int Rol);

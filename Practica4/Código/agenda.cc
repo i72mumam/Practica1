@@ -1,17 +1,18 @@
 #include "Agenda.h"
+#include "Persona.h"
 
 void Agenda::BuscarAlumno(string DNI){
 ListaAlumnos Alumnos;
 string linea;
   ifstream entrada;
-  entrada.open("Alumnos.bin", ios::in| ios:binary);
+  entrada.open("Alumnos.bin", ios::in| ios::binary);
     if(entrada.is_open()){
       while(getline(entrada,linea, ' ')){
         if(Alumnos.DNI_==DNI){
          cout<<linea<<endl;
         }
       }
-    fich.close();
+    entrada.close();
     }
     else{
     	cout<<" El fichero no se abrió correctamente"<<endl;
@@ -22,11 +23,11 @@ bool Agenda::ExisteAlumno(string DNI){
 ListaAlumnos Alumnos;
 string linea;
   ifstream entrada;
-  entrada.open("Alumnos.bin", ios::in| ios:binary);
+  entrada.open("Alumnos.bin", ios::in| ios::binary);
     if(entrada.is_open()){
       while(getline(entrada,linea, ' ')){
         if(Alumnos.DNI_==DNI){
- 	fich.close();
+ 	entrada.close();
  	return true;
         }
       }
@@ -37,17 +38,17 @@ string linea;
 return false;
 }
 
-void Agenda:: MostrarTodosAlumnos(){
+void Agenda::MostrarTodosAlumnos(){
   string linea;
     ifstream entrada;
-    entrada.open("Alumnos.bin", ios::in| ios:binary);
+    entrada.open("Alumnos.bin", ios::in| ios::binary);
       if(entrada.is_open()){
         while(getline(entrada,linea, ' ')){
           cout<<linea<<endl;
         }
+        entrada.close();
       }
       else{
-          cout << "El fichero no se abrió correctamente << '\n';
+          cout << "El fichero no se abrió correctamente "<<endl;
       }
-
-}
+  }

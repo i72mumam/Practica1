@@ -5,13 +5,14 @@
 #include <iostream>
 #include <cstdlib>
 #include <list>
+#include <fstream>
 
 #include "Persona.h"
 
 using namespace std;
 
 
-class Alumno:   public Persona{
+class Alumno : public Persona{
 private:
   int Grupo_;
   bool Lider_;
@@ -22,8 +23,9 @@ public:
               Grupo_=Grupo;
               Lider_=Lider;
           }
+  Alumno();
 inline void SetGrupo(int Grupo){Grupo_=Grupo;}
-inline int GetGrupo(){return Grupo_;};
+inline int GetGrupo(){return Grupo_;}
 
 inline bool GetLider(){
     if(Lider_==true){

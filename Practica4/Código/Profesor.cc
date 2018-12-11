@@ -1,18 +1,47 @@
 #include "Profesor.h"
+#include "Agenda.h"
 
-void Profesor:: CrearBackup(){
-ListaAlumnos Alumnos, agenda;
+void Profesor::CrearBackup(int Rol){
+
     if(Rol==0){
-      cout<<"Permiso Denegado"
+      cout<<"Permiso Denegado"<<endl;
     exit(-1);
     }
 ifstream principal;
 ofstream secundario;
-principal.open("Alumnos.bin", ios::in | ios::binary)
-secundario.open("Backup.bin", ios::out | ios:: binary)
+principal.open("Alumnos.bin", ios::in | ios::binary);
+secundario.open("Backup.bin", ios::out | ios:: binary);
 
   if(principal.is_open()){
-    if(secundiario_is.open()){
+    if(secundario_is.open()){
+        while(getline(principal,linea, ' '){
+            secundario.write((char *)Alumnos, sizeof(ListaAlumnos));
+        }
+    secundario.close();
+    }
+    else{
+      cout<<"No se realizó el backup correctamente"<<endl;
+    }
+  principal.close();
+  }
+  else{
+    cout<<"El fichero no se abrió correctamente"<<endl;
+  }
+}
+
+void Profesor:: CrearBackup(int Rol){
+ListaAlumnos Alumnos, agenda;
+    if(Rol==0){
+      cout<<"Permiso Denegado"<<endl;
+    exit(-1);
+    }
+ifstream principal;
+ofstream secundario;
+principal.open("Backup.bin", ios::in | ios::binary);
+secundario.open("Alumnos.bin", ios::out | ios:: binary);
+
+  if(principal.is_open()){
+    if(secundario_is.open()){
         while(principal.read((char *)agenda, sizeof(ListaAlumnos))){
             secundario.write((char *)Alumnos, sizeof(ListaAlumnos));
         }
@@ -28,64 +57,38 @@ secundario.open("Backup.bin", ios::out | ios:: binary)
   }
 }
 
-void Profesor:: CrearBackup(){
-ListaAlumnos Alumnos, agenda;
-    if(Rol==0){
-      cout<<"Permiso Denegado"
-    exit(-1);
-    }
-ifstream principal;
-ofstream secundario;
-principal.open("Backup.bin", ios::in | ios::binary)
-secundario.open("Alumnos.bin", ios::out | ios:: binary)
-
-  if(principal.is_open()){
-    if(secundiario_is.open()){
-        while(principal.read((char *)agenda, sizeof(ListaAlumnos))){
-            secundario.write((char *)Alumnos, sizeof(ListaAlumnos));
-        }
-    secundario.close();
-    }
-    else{
-      cout<<"No se realizó el backup correctamente"<<endl;
-    }
-  principal.close();
-  }
-  else{
-    cout<<"El fichero no se abrió correctamente"<<endl;
-  }
-}
-
-void Agenda:: menuCoordinador(){
+void Profesor:: menuCoordinador(){
   cout<<"Seleccione una opcion"<<endl<<endl;
-  cout<<"Insertar Alumno"<<endl;
-  cout<<"Mostrar Alumno"<<endl;
-  cout<<"Modificar Alumno"<<endl;
-  cout<<"Borrar Alumno"<<endl;
-  cout<<"Mostrar todos los alumnos"<<endl;
-  cout<<"Modificar grupo"<<endl;
-  cout<<"Dar de Alta un profesor"<<endl;
-  cout<<"Dar de Baja un profesor"<<endl;
-  cout<<"Guardar Backup"<<endl;
-  cout<<"Cargar Backup"<<endl;
+  cout<<"1. Insertar Alumno"<<endl;
+  cout<<"2. Mostrar Alumno"<<endl;
+  cout<<"3. Modificar Alumno"<<endl;
+  cout<<"4. Borrar Alumno"<<endl;
+  cout<<"5. Mostrar todos los alumnos"<<endl;
+  cout<<"6. Modificar grupo"<<endl;
+  cout<<"7. Dar de Alta un profesor"<<endl;
+  cout<<"8. Dar de Baja un profesor"<<endl;
+  cout<<"9. Guardar Backup"<<endl;
+  cout<<"10. Cargar Backup"<<endl;
+  cout<<"11. Borrar todos los alumnos"<<endl;
 }
 
-void Agenda:: menuAyudante(){
+void Profesor:: menuAyudante(){
   cout<<"Seleccione una opcion"<<endl<<endl;
-  cout<<"Insertar Alumno"<<endl;
-  cout<<"Mostrar Alumno"<<endl;
-  cout<<"Modificar Alumno"<<endl;
-  cout<<"Borrar Alumno"<<endl;
-  cout<<"Mostrar todos los alumnos"<<endl;
-  cout<<"Modificar grupo"<<endl;
+  cout<<"1. Insertar Alumno"<<endl;
+  cout<<"2. Mostrar Alumno"<<endl;
+  cout<<"3. Modificar Alumno"<<endl;
+  cout<<"4. Borrar Alumno"<<endl;
+  cout<<"5. Mostrar todos los alumnos"<<endl;
+  cout<<"6. Modificar grupo"<<endl;
+
 }
 
 
-void Profesor:: AccederSistema(Credencial){
+void Profesor:: AccederSistema(Credencial, Rol){
 ListaProfesores Lista;
 string linea;
   ifstream entrada;
-  entrada.open("Profesores.bin", ios::in| ios:binary);
+  entrada.open("Profesores.bin", ios::in| ios::binary);
     if(entrada.is_open()){
       while(getline(entrada,linea, ' ')){
         if(Lista.Credencial==Credencial){
@@ -98,4 +101,4 @@ string linea;
         }
       }
     }
-}  
+}

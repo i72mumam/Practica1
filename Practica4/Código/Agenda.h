@@ -20,22 +20,25 @@ typedef struct ListaAlumnos{
     int Grupo_;
 } ListaAlumnos;
 
-class Agenda{
+class Agenda : public Persona {
 
 private:
-    list <ListaAlumnos> ListaAlumnos_;
+    int Grupo_;
+    list <Alumno> ListaAlumnos_;
 
   public:
 
     Agenda(string DNI,string NombreCompleto, int Edad, string Email, int Grupo, bool Lider):
-              Persona(DNI, NombreCompleto, Edad, Email);
+              Persona(DNI, NombreCompleto, Edad, Email){
+                Grupo_=Grupo;
+              };
 
-  void BuscarALumno(string DNI);
+  void BuscarAlumno(string DNI);
   void ModificarAlumno(string DNI);
   void BorrarAlumno(string DNI);
   void InsertarAlumno(string DNI);
   void MostrarTodosAlumnos();
-  bool ExisteALumno(string DNI);
+  bool ExisteAlumno(string DNI);
 
 };
 

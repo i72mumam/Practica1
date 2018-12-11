@@ -27,7 +27,7 @@ cin >> Credencial;
 
 do{
 
-  AccederSistema(Credencial)
+  AccederSistema(Credencial, Rol)
 
 cin >> opcion;
 
@@ -145,7 +145,7 @@ cin >> opcion;
       string confirmacion;
       cout<<"¿Desea realizar una copia de Seguridad?"<<endl;
         cin >> confirmacion;
-          if(confirmacion=='Si'){
+          if(confirmacion=='S'){
               CrearBackup();
           }
           else{
@@ -164,7 +164,7 @@ cin >> opcion;
     string confirmacion;
     cout<<"¿Desea cargar una copia de Seguridad?"<<endl;
       cin >> confirmacion;
-        if(confirmacion=='Si'){
+        if(confirmacion=='S'){
             CargarBackup();
         }
         else{
@@ -178,7 +178,7 @@ cin >> opcion;
     string confirmacion;
         cout<<"¿Desea salir del sistema?"<<endl;
           cin >> confirmacion;
-        if(confirmacion=='Si'){
+        if(confirmacion=='S'){
           opcion=0;
         }
     break;
