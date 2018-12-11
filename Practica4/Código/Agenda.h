@@ -36,6 +36,7 @@ private:
   bool InsertarAlumno(string DNI);
   void MostrarTodosAlumnos();
   bool ExisteALumno(string DNI);
+  void BorrarTodosAlumnos();
 
 };
 

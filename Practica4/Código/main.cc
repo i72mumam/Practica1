@@ -174,13 +174,21 @@ cin >> opcion;
     break;
 
 }
-    case 11:
+    case 12:
     string confirmacion;
         cout<<"¿Desea salir del sistema?"<<endl;
           cin >> confirmacion;
         if(confirmacion=='Si'){
           opcion=0;
         }
+    break;
+    case 11:
+    string confirmacion;
+    cout<<"¿Seguro que desea borrar todos los alumnos?"<<endl;
+    cin>>confirmacion;
+    if(confirmacion=="S"){
+      BorrarTodosAlumnos();
+    }
     break;
 
 }

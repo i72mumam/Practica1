@@ -1,6 +1,7 @@
 
 #include "Alumno.h"
 #include "Agenda.h"
+#include "Persona.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ string linea;
   return true;
 }
 }
+}
 void Agenda::BorrarAlumno(string DNI){
   ListaAlumnos Alumnos;
   string linea;
@@ -28,11 +30,41 @@ void Agenda::BorrarAlumno(string DNI){
    entrada.open("Alumnos.bin", ios::in| ios:binary);
      if(entrada.is_open()){
        while(getline(entrada,linea, ' ')){
-           if(Alumnos.DNI_==DNI){
-               setAlumno(NULL);
+           if(Alumno.DNI_==DNI){
+               setDNI(NULL);
            }
        }
        else{
        cout<<"El fichero no se abrió correctamente"<<endl;
        }
+}
+}
+void Agenda::BorrarTodosAlumnos(){
+  ListaAlumnos Alumnos;
+  string linea;
+  ifstream entrada;
+  string DNI_;
+  string NombreCompleto;
+  int Edad_;
+  string Email_;
+  entrada.open("Alumnos.bin",ios::in| ios::binary);
+  if(entrada.is_open()){
+    while(getline(entrada,linea,' ')){
+        if(Alumnos.DNI_==DNI){
+          setDNI(NULL);
+        }
+        if(Alumnos.NombreCompleto_==NombreCompleto){
+          setNombreCompleto(NULL);
+        }
+        if(Alumnos.Edad_==Edad){
+          setEdad(NULL);
+        }
+        if(Alumnos.Email_==Email){
+          setEmail(NULL);
+        }
+    }
+    else{
+        cout<<"El fichero no se abrió correctamente"<<endl;
+    }
+  }
 }

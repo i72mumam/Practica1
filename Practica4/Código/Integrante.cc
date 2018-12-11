@@ -1,5 +1,6 @@
 #include "Grupo.h"
 #include "Alumno.h"
+#include "Persona.h"
 
 using namespace std;
 
