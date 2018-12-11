@@ -1,5 +1,4 @@
 #include "Profesor.h"
-#include "Agenda.h"
 
 void Profesor::CrearBackup(int Rol){
 
@@ -9,13 +8,14 @@ void Profesor::CrearBackup(int Rol){
     }
 ifstream principal;
 ofstream secundario;
+char * linea;
 principal.open("Alumnos.bin", ios::in | ios::binary);
 secundario.open("Backup.bin", ios::out | ios:: binary);
 
   if(principal.is_open()){
-    if(secundario_is.open()){
-        while(getline(principal,linea, ' '){
-            secundario.write((char *)Alumnos, sizeof(ListaAlumnos));
+    if(secundario.is_open()){
+        while(principal.read(linea, 150)){
+            secundario.write(linea,150);
         }
     secundario.close();
     }
@@ -29,21 +29,21 @@ secundario.open("Backup.bin", ios::out | ios:: binary);
   }
 }
 
-void Profesor:: CrearBackup(int Rol){
-ListaAlumnos Alumnos, agenda;
+void Profesor:: CargarBackup(int Rol){
     if(Rol==0){
       cout<<"Permiso Denegado"<<endl;
     exit(-1);
     }
 ifstream principal;
 ofstream secundario;
+char * linea;
 principal.open("Backup.bin", ios::in | ios::binary);
 secundario.open("Alumnos.bin", ios::out | ios:: binary);
 
   if(principal.is_open()){
-    if(secundario_is.open()){
-        while(principal.read((char *)agenda, sizeof(ListaAlumnos))){
-            secundario.write((char *)Alumnos, sizeof(ListaAlumnos));
+    if(secundario.is_open()){
+      while(principal.read(linea, 150)){
+          secundario.write(linea,150);
         }
     secundario.close();
     }
@@ -84,8 +84,8 @@ void Profesor:: menuAyudante(){
 }
 
 
-void Profesor:: AccederSistema(Credencial, Rol){
-ListaProfesores Lista;
+void Profesor:: AccederSistema(string Credencial, int Rol){
+Profesores Lista;
 string linea;
   ifstream entrada;
   entrada.open("Profesores.bin", ios::in| ios::binary);
@@ -98,6 +98,9 @@ string linea;
             else{
               menuAyudante();
             }
+        }
+      else{
+          cout<<"La credencial introducida no es correcta"<<endl;
         }
       }
     }
