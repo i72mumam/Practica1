@@ -1,10 +1,11 @@
 
 #include "Alumno.h"
+#include "Agenda.h"
 
 using namespace std;
 
 
-bool Alumno::InsertarAlumno(string DNI){
+bool Agenda::InsertarAlumno(string DNI){
 ListaAlumnos Alumnos;
 string linea;
   ifstream entrada;
@@ -20,7 +21,7 @@ string linea;
   return true;
 }
 }
-void Alumno::Borraralumno(string DNI){
+void Agenda::BorrarAlumno(string DNI){
   ListaAlumnos Alumnos;
   string linea;
    ifstream entrada;

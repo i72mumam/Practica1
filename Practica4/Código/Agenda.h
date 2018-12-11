@@ -33,7 +33,7 @@ private:
   void BuscarALumno(string DNI);
   void ModificarAlumno(string DNI);
   void BorrarAlumno(string DNI);
-  void InsertarAlumno(string DNI);
+  bool InsertarAlumno(string DNI);
   void MostrarTodosAlumnos();
   bool ExisteALumno(string DNI);
 
