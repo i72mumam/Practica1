@@ -20,7 +20,7 @@ string linea;
   return true;
 }
 }
-void Alumno::borraralumno(string DNI){
+void Alumno::Borraralumno(string DNI){
   ListaAlumnos Alumnos;
   string linea;
    ifstream entrada;

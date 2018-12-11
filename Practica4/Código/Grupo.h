@@ -28,8 +28,8 @@ inline void setLider(string Lider_Grupo){Lider_Grupo_=Lider_Grupo }
 void borrarIntegrante(string DNI, int NumGrupo);
 void modificarGrupo(string v[]);
 void borrarGrupo(, int NumMiembros, int NumGrupo);
-void mostrarGrupo(int NumGrupo)
-
+void mostrarGrupo(int NumGrupo);
+bool AnadirIntegrante(string DNI, int NumGrupo);
 
 };
 
