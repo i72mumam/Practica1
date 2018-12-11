@@ -12,12 +12,19 @@
 
 using namespace std;
 
+typedef struct ListaAlumnos{
+    string DNI_;
+    string NombreCompleto_;
+    int Edad_;
+    string Email_;
+    int Grupo_;
+} ListaAlumnos;
 
 class Agenda : public Persona {
 
 private:
     int Grupo_;
-    list <Alumno> ListaAlumnos_;
+    list <ListaAlumnos> ListaAlumnos_;
 
   public:
 

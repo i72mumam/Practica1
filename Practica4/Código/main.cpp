@@ -2,6 +2,7 @@
 #include "Profesor.h"
 #include "Alumno.h"
 #include "Persona.h"
+#include "Grupo.h"
 
 using namespace std;
 

@@ -85,14 +85,14 @@ void Profesor:: menuAyudante(){
 
 
 void Profesor:: AccederSistema(string Credencial, int Rol){
-Profesores Lista;
+Listaprofesores Lista;
 string linea;
   ifstream entrada;
   entrada.open("Profesores.bin", ios::in| ios::binary);
     if(entrada.is_open()){
       while(getline(entrada,linea, ' ')){
-        if(Lista.Credencial==Credencial){
-            if(Lista.Rol==1){
+        if(Lista.Credencial_==Credencial){
+            if(Lista.Rol_==1){
                 menuCoordinador();
             }
             else{

@@ -15,14 +15,14 @@ using namespace std;
 typedef struct Listaprofesores{
   string Credencial_;
   int Rol_;
-} Listaprofesores;
+} ListaProfesores;
 
 class Profesor : public Persona{
 
 private:
   string Credencial_;
   int Rol_;
-  list <Listaprofesores> Profesores_;
+  list <ListaProfesores> ListaProfesores_;
 
 public:
 
