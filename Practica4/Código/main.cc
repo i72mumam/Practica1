@@ -53,7 +53,7 @@ cin >> opcion;
     case 4:
     cout<<"Introduzca el DNI del alumno que desea borrar"<<endl;
     cin >> DNI;
-    borraralumno(DNI);
+    BorrarAlumno(DNI);
     break;
 
     case 5:
