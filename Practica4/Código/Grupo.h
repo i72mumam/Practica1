@@ -30,6 +30,7 @@ void modificarGrupo(string v[]);
 void borrarGrupo(, int NumMiembros, int NumGrupo);
 void mostrarGrupo(int NumGrupo);
 bool AnadirIntegrante(string DNI, int NumGrupo);
+void modificalider(string DNI, int NumGrupo);
 
 };
 

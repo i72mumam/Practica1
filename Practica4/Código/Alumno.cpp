@@ -14,7 +14,7 @@ string linea;
       while(getline(entrada,linea, ' ')){
         if(Alumnos.DNI_==DNI){
           cout<<" El alumno ya existe"<<endl;
- 	fich.close();
+
  	return false;
         }
       else {
@@ -34,9 +34,9 @@ void Agenda::BorrarAlumno(string DNI){
                setDNI(NULL);
            }
        }
-       else{
-       cout<<"El fichero no se abrió correctamente"<<endl;
-       }
+     }
+     else{
+     cout<<"El fichero no se abrió correctamente"<<endl;
 }
 }
 void Agenda::BorrarTodosAlumnos(){
@@ -63,8 +63,27 @@ void Agenda::BorrarTodosAlumnos(){
           SetEmail(NULL);
         }
     }
+  }
     else{
-        cout<<"El fichero no se abrió correctamente"<<endl;
+      cout<<"El fichero no se abrió correctamente"<<endl;
+  }
+}
+void Agenda::MostrarAlumno(string DNI){
+  ListaAlumnos Alumnos;
+  string linea;
+  ifstream entrada;
+  entrada.open("Alumnos.bin";ios::bin|ios::binary);
+  if(entrada.is_open()){
+    while(getline(entrada,linea,' ')){
+        if(Alumnos.DNI_==DNI){
+            cout<<linea<<endl;
+        }
+        else{
+            cout<<El alumno no existe"<<endl;
     }
+    }
+    }
+    else{
+        cout<<"Error al abrir el fichero"<<endl;
   }
 }

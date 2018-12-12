@@ -2,6 +2,7 @@
 #include "Profesor.h"
 #include "Alumno.h"
 #include "Persona.h"
+#include "Grupo.h"
 
 using namespace std;
 
@@ -27,7 +28,7 @@ cin >> Credencial;
 
 do{
 
-  AccederSistema(Credencial)
+  AccederSistema(Credencial, Rol)
 
 cin >> opcion;
 
@@ -53,7 +54,7 @@ cin >> opcion;
     case 4:
     cout<<"Introduzca el DNI del alumno que desea borrar"<<endl;
     cin >> DNI;
-    BorrarAlumno(DNI);
+    borraralumno(DNI);
     break;
 
     case 5:
@@ -145,7 +146,7 @@ cin >> opcion;
       string confirmacion;
       cout<<"¿Desea realizar una copia de Seguridad?"<<endl;
         cin >> confirmacion;
-          if(confirmacion=='Si'){
+          if(confirmacion=='S'){
               CrearBackup();
           }
           else{
@@ -164,7 +165,7 @@ cin >> opcion;
     string confirmacion;
     cout<<"¿Desea cargar una copia de Seguridad?"<<endl;
       cin >> confirmacion;
-        if(confirmacion=='Si'){
+        if(confirmacion=='S'){
             CargarBackup();
         }
         else{
@@ -174,15 +175,15 @@ cin >> opcion;
     break;
 
 }
-    case 12:
+    case 11:
     string confirmacion;
         cout<<"¿Desea salir del sistema?"<<endl;
           cin >> confirmacion;
-        if(confirmacion=='Si'){
+        if(confirmacion=='S'){
           opcion=0;
         }
     break;
-    case 11:
+    case 12:
     string confirmacion;
     cout<<"¿Seguro que desea borrar todos los alumnos?"<<endl;
     cin>>confirmacion;
@@ -190,6 +191,7 @@ cin >> opcion;
       BorrarTodosAlumnos();
     }
     break;
+
 
 }
 while(opcion!=0);

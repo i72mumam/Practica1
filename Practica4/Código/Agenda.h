@@ -34,6 +34,7 @@ private:
   void ModificarAlumno(string DNI);
   void BorrarAlumno(string DNI);
   bool InsertarAlumno(string DNI);
+  void MostrarAlumno(string DNI);
   void MostrarTodosAlumnos();
   bool ExisteALumno(string DNI);
   void BorrarTodosAlumnos();
