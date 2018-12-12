@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void BajaProfesor(){
+void Profesor:: BajaProfesor(){
   Listaprofesores Lista;
   string linea;
   string DNI;
