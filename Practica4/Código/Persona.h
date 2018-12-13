@@ -5,6 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <list>
+#include <fstream>
 
 using namespace std;
 
@@ -12,11 +13,12 @@ class Persona{
 
 private:
     string DNI_;
-    string NombreCompleto;
+    string NombreCompleto_;
     int Edad_;
     string Email_;
 
 public:
+  Persona(){}
     Persona(string DNI,string NombreCompleto, int Edad, string Email){
          DNI_=DNI;
         NombreCompleto_= NombreCompleto;
@@ -24,17 +26,17 @@ public:
         Email_= Email;
       }
 
-inline void SetDNI(string DNI){DNI=DNI_;};
-inline string GetDNI(){ return DNI_;};
+inline void SetDNI(string DNI){DNI=DNI_;}
+inline string GetDNI(){ return DNI_;}
 
-inline void SetNombreCompleto(string NombreCompleto){NombreCompleto=NombreCompleto_;};
-inline string GetNombreCompleto(){return NombreCompleto_;};
+inline void SetNombreCompleto(string NombreCompleto){NombreCompleto=NombreCompleto_;}
+inline string GetNombreCompleto(){return NombreCompleto_;}
 
-inline void SetEdad(int Edad){Edad=Edad_;};
-inline int Getedad(){ return Edad_;};
+inline void SetEdad(int Edad){Edad=Edad_;}
+inline int Getedad(){ return Edad_;}
 
-inline void SetEmail(string Email){Email=Email_;};
-inline string GetEmail(){return Email_;};
+inline void SetEmail(string Email){Email=Email_;}
+inline string GetEmail(){return Email_;}
 
 
 };

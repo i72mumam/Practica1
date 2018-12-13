@@ -6,33 +6,31 @@
 #include <cstdlib>
 #include <list>
 
-#include"Persona.h"
-
 using namespace std;
 
 class Grupo{
 private:
     string Lider_Grupo_;
-    int NumMiembros_
+    int NumMiembros_;
     int NumGrupo_;
-    string v_[];
 
-public: Grupo(string Lider_Grupo, int NumMiembros=0, int Numgrupo, string v[]){
+public:
+Grupo(){}
+
+  Grupo(string Lider_Grupo, int NumGrupo, int NumMiembros=0){
     Lider_Grupo_=Lider_Grupo;
     NumMiembros_=NumMiembros;
     NumGrupo_=NumGrupo;
-    v_[]=v[];
 };
 
-inline string getLider(){return Lider_Grupo_;};
-inline void setLider(string Lider_Grupo){Lider_Grupo_=Lider_Grupo }
+inline string getLider(){return Lider_Grupo_;}
+inline void setLider(string Lider_Grupo){Lider_Grupo_=Lider_Grupo; }
 
-void borrarIntegrante(string DNI, int NumGrupo);
-void modificarGrupo(string v[]);
-void borrarGrupo(, int NumMiembros, int NumGrupo);
-void mostrarGrupo(int NumGrupo);
+void BorrarIntegrante(string DNI, int NumGrupo);
+void ModificarLider(string DNI, int NumGrupo);
+void BorrarGrupo(int NumGrupo);
+void MostrarGrupo(int NumGrupo);
 bool AnadirIntegrante(string DNI, int NumGrupo);
-void modificalider(string DNI, int NumGrupo);
 
 };
 
