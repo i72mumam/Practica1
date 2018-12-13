@@ -79,7 +79,7 @@ void Agenda::MostrarAlumno(string DNI){
             cout<<linea<<endl;
         }
         else{
-            cout<<El alumno no existe"<<endl;
+            cout<<"El alumno no existe"<<endl;
     }
     }
     }
@@ -87,3 +87,43 @@ void Agenda::MostrarAlumno(string DNI){
         cout<<"Error al abrir el fichero"<<endl;
   }
 }
+ void Agenda::ModificarAlumno(string DNI){
+   ListaAlumnos Alumnos;
+   string Email_;
+   int Edad_;
+   string NombreCompleto_;
+   string linea;
+   ifstream entrada;
+   entrada.open("Alumnos.bin"; ios::in|ios::binary);
+   if(entrada.is_open()){
+      while(getline(entrada,linea, ' ')){
+          if(Alumnos.DNI_==DNI){
+              cin>>datos_modificar;
+              switch(datos_modificar){
+                case 1:
+                  cout<<"Introducir nuevo DNI"<<endl;
+                  cin>>DNI;
+                break;
+                case 2:
+                  cout<<"Introducir nuevo Email"<<endl;
+                  cin>>Email_;
+                break;
+                case 3:
+                  cout<<"Introducir nuevo NombreCompleto"<<endl;
+                  cin>> NombreCompleto_;
+                break;
+                case 4:
+                  cout<<"Introducir nueva Edad"<<endl;
+                  cin>>Edad_;
+                  break;
+              }
+          }
+          else{
+              cout<<"No se encuentra el alumno"<<endl;
+          }
+      }
+   }
+   else{
+        cout<<"Error al abrir el fichero"<<endl;
+   }
+ }

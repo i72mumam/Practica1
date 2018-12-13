@@ -49,6 +49,7 @@ cin >> opcion;
     case 3:
     cout<<"Introduzca el DNI del alumno que desea modificar sus datos"<<endl;
     cin >> DNI;
+    ModificarAlumno(DNI);
     break;
 
     case 4:

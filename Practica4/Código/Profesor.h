@@ -13,7 +13,7 @@
 using namespace std;
 
 typedef struct ListaProfesores{
-  string Credendial_;
+  string Credencial_;
   int Rol_;
 } ListaAlumnos;
 

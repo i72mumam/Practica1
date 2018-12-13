@@ -28,7 +28,7 @@ bool Grupo:: AnadirIntegrante(string DNI, int NumGrupo){
           while(getline(entrada,linea,' ')){
               if(Alumnos.DNI==DNI)&&(Grupo.NumGrupo==NumGrupo){
                     void setLider(string Lider_Grupo){
-                      Lider_Grupo_=DNI; }
+                      Lider_Grupo=DNI; }
                     }
                     else{
                         cout<<"Error al abrir el fichero"<<endl;
