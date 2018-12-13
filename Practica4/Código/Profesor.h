@@ -25,6 +25,7 @@ private:
   list <ListaProfesores> ListaProfesores_;
 
 public:
+    Profesor(){}
 
     Profesor(string DNI,string NombreCompleto, int Edad, string Email, string Credencial, int Rol):
           Persona(DNI, NombreCompleto, Edad, Email){
@@ -38,11 +39,11 @@ inline string GetCredencial(){ return Credencial_;};
 inline void setRol(bool Rol){Rol_=Rol;};
 inline int getRol(){return Rol_;};
 
-void AccederSistema(string Credencial, int Rol);
-void AltaProfesor();
-void BajaProfesor();
-void CrearBackup(int Rol);
-void CargarBackup(int Rol);
+void AccederSistema(string Credencial);
+void AltaProfesor(string DNI,string NombreCompleto,string Email);
+void BajaProfesor(string DNI);
+void CrearBackup();
+void CargarBackup();
 void menuCoordinador();
 void menuAyudante();
 };

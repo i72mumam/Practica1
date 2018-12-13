@@ -23,7 +23,8 @@ public:
               Grupo_=Grupo;
               Lider_=Lider;
           }
-  Alumno();
+  Alumno(){}
+
 inline void SetGrupo(int Grupo){Grupo_=Grupo;}
 inline int GetGrupo(){return Grupo_;}
 

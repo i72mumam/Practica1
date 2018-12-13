@@ -1,15 +1,24 @@
 #include "Agenda.h"
 #include "Persona.h"
 
-void Agenda::BuscarAlumno(string DNI){
-ListaAlumnos Alumnos;
+void Agenda::MostrarAlumno(string DNI){ //Funciona
 string linea;
   ifstream entrada;
   entrada.open("Alumnos.bin", ios::in| ios::binary);
     if(entrada.is_open()){
       while(getline(entrada,linea, ' ')){
-        if(Alumnos.DNI_==DNI){
-         cout<<linea<<endl;
+        if((linea.c_str())==DNI){
+            cout<<linea<<' ';
+        getline(entrada,linea, ' ');
+          cout<<linea<<' ';
+        getline(entrada,linea, ' ');
+          cout<<linea<<' ';
+        getline(entrada,linea, ' ');
+          cout<<linea<<' ';
+        getline(entrada,linea, ' ');
+          cout<<linea<<' ';
+        getline(entrada,linea, '\n');
+          cout<<linea<<' ';
         }
       }
     entrada.close();
@@ -19,7 +28,7 @@ string linea;
 	}
 }
 
-bool Agenda::ExisteAlumno(string DNI){
+/*bool Agenda::ExisteAlumno(string DNI){
 ListaAlumnos Alumnos;
 string linea;
   ifstream entrada;
@@ -36,15 +45,25 @@ string linea;
     	cout<<" El fichero no se abrió correctamente"<<endl;
     }
 return false;
-}
+}*/
 
-void Agenda::MostrarTodosAlumnos(){
+void Agenda::MostrarTodosAlumnos(){     //Funciona
   string linea;
     ifstream entrada;
     entrada.open("Alumnos.bin", ios::in| ios::binary);
       if(entrada.is_open()){
         while(getline(entrada,linea, ' ')){
-          cout<<linea<<endl;
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, '\n');
+            cout<<linea<<endl;
         }
         entrada.close();
       }

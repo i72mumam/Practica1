@@ -28,18 +28,20 @@ private:
 
   public:
 
+    Agenda(){}
+
     Agenda(string DNI,string NombreCompleto, int Edad, string Email, int Grupo, bool Lider):
               Persona(DNI, NombreCompleto, Edad, Email){
                 Grupo_=Grupo;
               };
 
-  void BuscarAlumno(string DNI);
+  void MostrarAlumno(string DNI);
   void ModificarAlumno(string DNI);
   void BorrarAlumno(string DNI);
   void InsertarAlumno(string DNI);
   void MostrarTodosAlumnos();
   bool ExisteAlumno(string DNI);
-
+  void BorrarTodosAlumnos();
 };
 
 #endif

@@ -18,6 +18,7 @@ private:
     string Email_;
 
 public:
+  Persona(){}
     Persona(string DNI,string NombreCompleto, int Edad, string Email){
          DNI_=DNI;
         NombreCompleto_= NombreCompleto;

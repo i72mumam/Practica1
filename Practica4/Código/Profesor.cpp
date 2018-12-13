@@ -1,11 +1,7 @@
 #include "Profesor.h"
 
-void Profesor::CrearBackup(int Rol){
+void Profesor::CrearBackup(){
 
-    if(Rol==0){
-      cout<<"Permiso Denegado"<<endl;
-    exit(-1);
-    }
 ifstream principal;
 ofstream secundario;
 char * linea;
@@ -29,11 +25,7 @@ secundario.open("Backup.bin", ios::out | ios:: binary);
   }
 }
 
-void Profesor:: CargarBackup(int Rol){
-    if(Rol==0){
-      cout<<"Permiso Denegado"<<endl;
-    exit(-1);
-    }
+void Profesor:: CargarBackup(){
 ifstream principal;
 ofstream secundario;
 char * linea;
@@ -84,7 +76,7 @@ void Profesor:: menuAyudante(){
 }
 
 
-void Profesor:: AccederSistema(string Credencial, int Rol){
+void Profesor:: AccederSistema(string Credencial){
 Listaprofesores Lista;
 string linea;
   ifstream entrada;
