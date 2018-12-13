@@ -5,12 +5,13 @@
 
 using namespace std;
 
+Alumno aux;
 
 bool Agenda::InsertarAlumno(string DNI){
 ListaAlumnos Alumnos;
 string linea;
   ifstream entrada;
-  entrada.open("Alumnos.bin", ios::in| ios:binary);
+  entrada.open("Alumnos.bin", ios::in| ios::binary);
       while(getline(entrada,linea, ' ')){
         if(Alumnos.DNI_==DNI){
           cout<<" El alumno ya existe"<<endl;
@@ -27,11 +28,11 @@ void Agenda::BorrarAlumno(string DNI){
   ListaAlumnos Alumnos;
   string linea;
    ifstream entrada;
-   entrada.open("Alumnos.bin", ios::in| ios:binary);
+   entrada.open("Alumnos.bin", ios::in| ios::binary);
      if(entrada.is_open()){
        while(getline(entrada,linea, ' ')){
-           if(Alumno.DNI_==DNI){
-               setDNI(NULL);
+           if(Alumnos.DNI_==DNI){
+               aux.SetDNI(NULL);
            }
        }
      }
@@ -43,24 +44,24 @@ void Agenda::BorrarTodosAlumnos(){
   ListaAlumnos Alumnos;
   string linea;
   ifstream entrada;
-  string DNI_;
+  string DNI;
   string NombreCompleto;
-  int Edad_;
-  string Email_;
+  int Edad;
+  string Email;
   entrada.open("Alumnos.bin",ios::in| ios::binary);
   if(entrada.is_open()){
     while(getline(entrada,linea,' ')){
         if(Alumnos.DNI_==DNI){
-          SetDNI(NULL);
+          aux.SetDNI(NULL);
         }
         if(Alumnos.NombreCompleto_==NombreCompleto){
-          SetNombreCompleto(NULL);
+          aux.SetNombreCompleto(NULL);
         }
         if(Alumnos.Edad_==Edad){
-          SetEdad(NULL);
+          aux.SetEdad(NULL);
         }
         if(Alumnos.Email_==Email){
-          SetEmail(NULL);
+          aux.SetEmail(NULL);
         }
     }
   }
@@ -72,7 +73,7 @@ void Agenda::MostrarAlumno(string DNI){
   ListaAlumnos Alumnos;
   string linea;
   ifstream entrada;
-  entrada.open("Alumnos.bin";ios::bin|ios::binary);
+  entrada.open("Alumnos.bin",ios::in|ios::binary);
   if(entrada.is_open()){
     while(getline(entrada,linea,' ')){
         if(Alumnos.DNI_==DNI){
@@ -89,12 +90,13 @@ void Agenda::MostrarAlumno(string DNI){
 }
  void Agenda::ModificarAlumno(string DNI){
    ListaAlumnos Alumnos;
+   int datos_modificar;
    string Email_;
    int Edad_;
    string NombreCompleto_;
    string linea;
    ifstream entrada;
-   entrada.open("Alumnos.bin"; ios::in|ios::binary);
+   entrada.open("Alumnos.bin",ios::in|ios::binary);
    if(entrada.is_open()){
       while(getline(entrada,linea, ' ')){
           if(Alumnos.DNI_==DNI){

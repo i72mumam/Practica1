@@ -8,7 +8,7 @@
 #include <list>
 #include <fstream>
 
-#include "persona.h"
+#include "Persona.h"
 
 using namespace std;
 

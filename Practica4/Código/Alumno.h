@@ -16,7 +16,7 @@ private:
   int Grupo_;
   bool Lider_;
 public:
-
+  Alumno(){}
   Alumno(string DNI,string NombreCompleto, int Edad, string Email, int Grupo, bool Lider):
           Persona(DNI, NombreCompleto, Edad, Email){
               Grupo_=Grupo;

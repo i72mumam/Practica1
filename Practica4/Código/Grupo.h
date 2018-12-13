@@ -6,9 +6,11 @@
 #include <cstdlib>
 #include <list>
 
+#include"Persona.h"
+
 using namespace std;
 
-Class Grupo{
+class Grupo{
 private:
     string Lider_Grupo_;
     int NumMiembros_
