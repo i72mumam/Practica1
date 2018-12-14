@@ -13,15 +13,19 @@ class Persona{
 
 private:
     string DNI_;
-    string NombreCompleto_;
+    string Nombre_;
+    string Apellido1_;
+    string Apellido2_;
     int Edad_;
     string Email_;
 
 public:
   Persona(){}
-    Persona(string DNI,string NombreCompleto, int Edad, string Email){
+    Persona(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email){
          DNI_=DNI;
-        NombreCompleto_= NombreCompleto;
+        Nombre_= Nombre;
+        Apellido1_=Apellido1;
+        Apellido2_=Apellido2;
         Edad_= Edad;
         Email_= Email;
       }
@@ -29,8 +33,8 @@ public:
 inline void SetDNI(string DNI){DNI=DNI_;}
 inline string GetDNI(){ return DNI_;}
 
-inline void SetNombreCompleto(string NombreCompleto){NombreCompleto=NombreCompleto_;}
-inline string GetNombreCompleto(){return NombreCompleto_;}
+//inline void SetNombreCompleto(string NombreCompleto){NombreCompleto=NombreCompleto_;}
+//inline string GetNombreCompleto(){return NombreCompleto_;}
 
 inline void SetEdad(int Edad){Edad=Edad_;}
 inline int Getedad(){ return Edad_;}

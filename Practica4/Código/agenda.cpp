@@ -7,8 +7,12 @@ string linea;
   entrada.open("Alumnos.bin", ios::in| ios::binary);
     if(entrada.is_open()){
       while(getline(entrada,linea, ' ')){
-        if((linea.c_str())==DNI){
+        if(linea=DNI){
             cout<<linea<<' ';
+        getline(entrada,linea, ' ');
+          cout<<linea<<' ';
+        getline(entrada,linea, ' ');
+          cout<<linea<<' ';
         getline(entrada,linea, ' ');
           cout<<linea<<' ';
         getline(entrada,linea, ' ');
@@ -53,6 +57,10 @@ void Agenda::MostrarTodosAlumnos(){     //Funciona
     entrada.open("Alumnos.bin", ios::in| ios::binary);
       if(entrada.is_open()){
         while(getline(entrada,linea, ' ')){
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
             cout<<linea<<' ';
           getline(entrada,linea, ' ');
             cout<<linea<<' ';

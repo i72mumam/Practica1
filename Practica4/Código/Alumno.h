@@ -18,8 +18,8 @@ private:
   bool Lider_;
 public:
 
-  Alumno(string DNI,string NombreCompleto, int Edad, string Email, int Grupo, bool Lider):
-          Persona(DNI, NombreCompleto, Edad, Email){
+  Alumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo, bool Lider):
+          Persona(DNI, Nombre, Apellido1, Apellido2, Edad, Email){
               Grupo_=Grupo;
               Lider_=Lider;
           }

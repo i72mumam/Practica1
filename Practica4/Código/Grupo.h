@@ -4,33 +4,32 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include <list>
 
 using namespace std;
 
-class Grupo{
-private:
+class Grupo{                // Declaramos la clase Grupo
+private:                    //Declaramos la parte privada de la clase, junto a sus variables
     string Lider_Grupo_;
     int NumMiembros_;
     int NumGrupo_;
 
-public:
-Grupo(){}
+public:                 // Declaramos la parte pública
+Grupo(){}               // Creamos un constructor vacío para poder realizar las funciones más adelante
 
-  Grupo(string Lider_Grupo, int NumGrupo, int NumMiembros=0){
-    Lider_Grupo_=Lider_Grupo;
+  Grupo(string Lider_Grupo, int NumGrupo, int NumMiembros=0){     // Creamos un constructor con las variables que pertenezcan a la clase Grupo
+    Lider_Grupo_=Lider_Grupo;                                     // Igualamos la variables privadas con las variables declaradas en el constructor
     NumMiembros_=NumMiembros;
     NumGrupo_=NumGrupo;
 };
 
-inline string getLider(){return Lider_Grupo_;}
-inline void setLider(string Lider_Grupo){Lider_Grupo_=Lider_Grupo; }
+inline string getLider(){return Lider_Grupo_;}                      //Función que devuelve el valor de la variable Lider_Grupo_
+inline void setLider(string Lider_Grupo){Lider_Grupo_=Lider_Grupo; }             // Funcion que modifica el valor de la variable Lider_Grupo_
 
-void BorrarIntegrante(string DNI, int NumGrupo);
-void ModificarLider(string DNI, int NumGrupo);
-void BorrarGrupo(int NumGrupo);
-void MostrarGrupo(int NumGrupo);
-bool AnadirIntegrante(string DNI, int NumGrupo);
+void BorrarIntegrante(string DNI);            //Función que borra un integrante de un grupo
+void ModificarLider(string DNI, int NumGrupo);    //Función que modifica el líder de un grupo
+void BorrarGrupo(int NumGrupo);                   //Función que borra un Grupo
+void MostrarGrupo(int NumGrupo);                  //Función que muestra un Grupo
+bool AnadirIntegrante(string DNI, int NumGrupo);   //Función que añade un integrante al nuevo grupo
 
 };
 

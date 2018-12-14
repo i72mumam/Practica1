@@ -12,26 +12,19 @@
 
 using namespace std;
 
-typedef struct ListaAlumnos{
-    string DNI_;
-    string NombreCompleto_;
-    int Edad_;
-    string Email_;
-    int Grupo_;
-} ListaAlumnos;
 
 class Agenda : public Persona {
 
 private:
     int Grupo_;
-    list <ListaAlumnos> ListaAlumnos_;
+
 
   public:
 
     Agenda(){}
 
-    Agenda(string DNI,string NombreCompleto, int Edad, string Email, int Grupo, bool Lider):
-              Persona(DNI, NombreCompleto, Edad, Email){
+    Agenda(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo, bool Lider):
+              Persona(DNI,Nombre, Apellido1, Apellido2 , Edad, Email){
                 Grupo_=Grupo;
               };
 

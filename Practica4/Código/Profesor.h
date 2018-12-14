@@ -12,23 +12,21 @@
 
 using namespace std;
 
-typedef struct Listaprofesores{
-  string Credencial_;
-  int Rol_;
-} ListaProfesores;
+
 
 class Profesor : public Persona{
 
 private:
   string Credencial_;
   int Rol_;
-  list <ListaProfesores> ListaProfesores_;
+  string Usuario_;
 
 public:
     Profesor(){}
 
-    Profesor(string DNI,string NombreCompleto, int Edad, string Email, string Credencial, int Rol):
-          Persona(DNI, NombreCompleto, Edad, Email){
+    Profesor(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, string Usuario, string Credencial, int Rol):
+          Persona(DNI, Nombre, Apellido1, Apellido2, Edad, Email){
+                Usuario_=Usuario;
                 Credencial_=Credencial;
                 Rol_=Rol;
           };
@@ -39,7 +37,7 @@ inline string GetCredencial(){ return Credencial_;};
 inline void setRol(bool Rol){Rol_=Rol;};
 inline int getRol(){return Rol_;};
 
-void AccederSistema(string Credencial);
+void AccederSistema(string Usuario, string Credencial);
 void AltaProfesor(string DNI,string NombreCompleto,string Email);
 void BajaProfesor(string DNI);
 void CrearBackup();

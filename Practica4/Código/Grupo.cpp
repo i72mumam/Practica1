@@ -5,52 +5,83 @@
 
 using namespace std;
 
-void Grupo:: BorrarGrupo(int NumGrupo){
+void Grupo:: BorrarGrupo(int NumGrupo){     //Funciona
 
   Alumno aux;
   string linea;
     ifstream entrada;
+    ofstream secundario;
     entrada.open("Alumnos.bin", ios::in| ios::binary);
+    secundario.open("Temporal.bin",ios::out|ios::binary);
+
       if(entrada.is_open()){
-        while(getline(entrada,linea, ' ')){
-              getline(entrada,linea, ' ');
-              getline(entrada,linea, ' ');
-              getline(entrada,linea, ' ');
-              getline(entrada,linea, ' ');
 
-                if(atoi(linea.c_str())==NumGrupo){
+        if(secundario.is_open()){
+          while(getline(entrada,linea, ' ')){
+            secundario << linea << ' ';               // Escribimos lo que hay en linea en el fichero, junto a un espacio
+            getline(entrada,linea, ' ');
+            secundario << linea << ' ';               //Realizamos esto hasta que finalice la linea del fichero que estamos leyendo
+            getline(entrada,linea, ' ');
+            secundario << linea << ' ';
+            getline(entrada,linea, ' ');
+            secundario << linea << ' ';
+            getline(entrada,linea, ' ');
+            secundario << linea << ' ';
+            getline(entrada,linea, ' ');
+            secundario << linea << ' ';
+            getline(entrada,linea, ' ');
 
-                  aux.SetGrupo(0);
-            }
-          }
+              if(atoi(linea.c_str())==NumGrupo){
+                    aux.SetGrupo(0);
+                    int n=aux.GetGrupo();
+                    secundario<<n<<' ';
+              }
+              else{
+                  secundario << linea << ' ';
+              }
+            getline(entrada,linea, '\n');           //Finaliza la linea
+            secundario << linea <<endl;
+
+
+            rename("Temporal.bin", "Alumnos.bin");
+
         }
+      }
+
+    }
 
       else{
         cout<<"El fichero no se abrió correctamente"<<endl;
       }
 }
 
-void Grupo:: MostrarGrupo(int NumGrupo){        //Funciona
-  Alumno aux;
-    string DNI,NombreCompleto, Email, edad, grupo, linea;
-      ifstream entrada;
-      entrada.open("Alumnos.bin", ios::in| ios::binary);
-        if(entrada.is_open()){
-          while(getline(entrada,DNI, ' ')){
-            getline(entrada,NombreCompleto, ' ');
-            getline(entrada,edad, ' ');
-            getline(entrada,Email, ' ');
-            getline(entrada,grupo,' ');
-            getline(entrada,linea, '\n');
-            if(atoi(grupo.c_str())==NumGrupo){
-              cout<<DNI<<" ";
-              cout<<NombreCompleto<<" ";
-              cout<<edad<<" ";
-              cout<<Email<<" ";
-              cout<<grupo<<" ";
 
+// MostrarGrupo
+// Muestra los integrantes de un grupo, el cual se pide por pantalla
+void Grupo:: MostrarGrupo(int NumGrupo){
 
-                cout<<linea<<endl;
+    string DNI,Nombre, Apellido1, Apellido2, Email, edad, grupo, linea; // Declaramos los strings necesarios para mostrar al alumno
+      ifstream entrada;                // Declaramos el fichero
+      entrada.open("Alumnos.bin", ios::in| ios::binary);    //Abrimos el fichero en modo lectura y binario
+        if(entrada.is_open()){        // Comprobamos si el fichero se ha abierto
+          while(getline(entrada,DNI, ' ')){       //Si el fichero se abre, lee hasta el primer espacio y lo guarda en la variable DNI
+            getline(entrada,Nombre, ' ');         // Lee hasta el siguiente espacio y lo guarda en la variable Nombre
+            getline(entrada,Apellido1, ' ');      // Lee hasta el siguiente espacio y lo guarda en la variable Apellido1
+            getline(entrada,Apellido2, ' ');      // Lee hasta el siguiente espacio y lo guarda en la variable Apellido2
+            getline(entrada,edad, ' ');           // Lee hasta el siguiente espacio y lo guarda en la variable edad
+            getline(entrada,Email, ' ');          // Lee hasta el siguiente espacio y lo guarda en la variable Email
+            getline(entrada,grupo,' ');           // Lee hasta el siguiente espacio y lo guarda en la variable Grupo
+            getline(entrada,linea, '\n');         // Lee hasta el siguiente espacio y lo guarda en la variable linea
+
+              if(atoi(grupo.c_str())==NumGrupo){    // Comprobamos si el grupo leido en el fichero es igual al grupo introducido
+                  cout<<DNI<<" ";                   // Si es igual, imprime todas las variables que hemos leído antes
+                  cout<<Nombre<<" ";
+                  cout<<Apellido1<<" ";
+                  cout<<Apellido2<<" ";
+                  cout<<edad<<" ";
+                  cout<<Email<<" ";
+                  cout<<grupo<<" ";
+                  cout<<linea<<endl;
 
 
 
@@ -58,24 +89,72 @@ void Grupo:: MostrarGrupo(int NumGrupo){        //Funciona
 
             }
         }
-        else{
+        else{                                     // Si no abre el fichero, se imprime un mensaje de error
+
               cout<<"El fichero no se abrió correctamente"<<endl;
         }
 }
 
-/*void Grupo:: BorrarIntegrante(cstring DNI, int NumGrupo){
-  ListaAlumnos Alumnos;
+void Grupo:: BorrarIntegrante(string DNI){            //Funciona
+  Alumno aux;
     string linea;
-      ifstream entrada;
-      entrada.open("Alumnos.bin", ios::in| ios::binary);
+      fstream entrada;
+      ofstream secundario;
+      entrada.open("Alumnos.bin", ios::in | ios::binary);
+      secundario.open("Temporal.bin",ios::out|ios::binary);
+
         if(entrada.is_open()){
-          while(getline(entrada,linea, ' ')){
-            if(Alumnos.DNI_==DNI){
-                Alumnos.Grupo_==0;
-            }
+
+          if(secundario.is_open()){
+            while(getline(entrada,linea, ' ')){
+              if(linea==DNI){
+
+                secundario << linea << ' ';               // Escribimos lo que hay en linea en el fichero, junto a un espacio
+                getline(entrada,linea, ' ');
+                secundario << linea << ' ';               //Realizamos esto hasta que finalice la linea del fichero que estamos leyendo
+                getline(entrada,linea, ' ');
+                secundario << linea << ' ';
+                getline(entrada,linea, ' ');
+                secundario << linea << ' ';
+                getline(entrada,linea, ' ');
+                secundario << linea << ' ';
+                getline(entrada,linea, ' ');
+                secundario << linea << ' ';
+                getline(entrada,linea, ' ');
+                aux.SetGrupo(0);
+                int n=aux.GetGrupo();
+                secundario<<n<<' ';
+                getline(entrada,linea, ' ');
+                secundario << linea <<endl;
+                  }
+                else{
+                                                              //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea.
+                        secundario << linea << ' ';                             // Escribimos lo que hay en linea en el fichero, junto a un espacio
+                        getline(entrada,linea, ' ');
+                        secundario << linea << ' ';                             //Realizamos esto hasta que finalice la linea del fichero que estamos leyendo
+                        getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                        getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                        getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                        getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                        getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                        getline(entrada,linea, '\n');                       //Finaliza la linea del fichero
+                        secundario << linea <<endl;
+                }
+
+
+              rename("Temporal.bin", "Alumnos.bin");
+
           }
         }
-    else{
-      cout<<"El fichero no se abrió correctamente"<<endl;
-    }
-}*/
+
+      }
+
+        else{
+          cout<<"El fichero no se abrió correctamente"<<endl;
+        }
+  }
