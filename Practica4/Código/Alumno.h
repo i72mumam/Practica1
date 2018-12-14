@@ -15,10 +15,10 @@ using namespace std;
 class Alumno : public Persona{
 private:
   int Grupo_;
-  bool Lider_;
+  string Lider_;
 public:
 
-  Alumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo, bool Lider):
+  Alumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo, string Lider):
           Persona(DNI, Nombre, Apellido1, Apellido2, Edad, Email){
               Grupo_=Grupo;
               Lider_=Lider;
@@ -28,12 +28,9 @@ public:
 inline void SetGrupo(int Grupo){Grupo_=Grupo;}
 inline int GetGrupo(){return Grupo_;}
 
-inline bool GetLider(){
-    if(Lider_==true){
-        return Lider_;
-    }
-    else{return false;}
-}
+inline string GetLider(){return Lider_;}                      //Función que devuelve el valor de la variable Lider_
+inline void SetLider(string Lider){Lider_=Lider; }             // Funcion que modifica el valor de la variable Lider_
+
 
 };
 

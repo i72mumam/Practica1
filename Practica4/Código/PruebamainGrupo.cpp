@@ -1,25 +1,31 @@
+
+#include "Agenda.h"
 #include"Grupo.h"
+
 
 using namespace std;
 
 int main(){
 
-string DNI;
-int NumGrupo;
-Grupo p;
+  string DNI, Nombre, Apellido1, Apellido2, Email;
+  int Edad,NumGrupo, NumMiembros;
 
-cout<<'\n'<<"Introduzca el grupo del integrante que desea Borrar"<<endl;
+Grupo a;
 
-cin>>NumGrupo;
+Agenda p;
 
-p.MostrarGrupo(NumGrupo);
+p.MostrarTodosAlumnos();
 
-cout<<'\n'<<"Introduzca el DNI del alumno que desea borrar del grupo"<<endl;
+  cout<<"Introduza el DNI"<<endl;
+  cin>>DNI;
 
-cin>>DNI;
+  cout<<"Grupo"<<endl;
+  cin>>NumGrupo;
 
-p.BorrarIntegrante(DNI);
+  NumMiembros= a.ContarMiembros(NumGrupo);
 
-p.MostrarGrupo(NumGrupo);
+  a.AnadirIntegrante(DNI, NumGrupo,NumMiembros);
+
+  a.MostrarGrupo(NumGrupo);
 
 }

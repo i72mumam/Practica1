@@ -22,14 +22,14 @@ Grupo(){}               // Creamos un constructor vacío para poder realizar las
     NumGrupo_=NumGrupo;
 };
 
-inline string getLider(){return Lider_Grupo_;}                      //Función que devuelve el valor de la variable Lider_Grupo_
-inline void setLider(string Lider_Grupo){Lider_Grupo_=Lider_Grupo; }             // Funcion que modifica el valor de la variable Lider_Grupo_
+
 
 void BorrarIntegrante(string DNI);            //Función que borra un integrante de un grupo
 void ModificarLider(string DNI, int NumGrupo);    //Función que modifica el líder de un grupo
 void BorrarGrupo(int NumGrupo);                   //Función que borra un Grupo
 void MostrarGrupo(int NumGrupo);                  //Función que muestra un Grupo
-bool AnadirIntegrante(string DNI, int NumGrupo);   //Función que añade un integrante al nuevo grupo
+int ContarMiembros(int NumGrupo);
+void AnadirIntegrante(string DNI, int NumGrupo, int NumMiembros);   //Función que añade un integrante al nuevo grupo
 
 };
 

@@ -44,7 +44,8 @@ void Grupo:: BorrarGrupo(int NumGrupo){     //Funciona
 
 
             rename("Temporal.bin", "Alumnos.bin");
-
+            secundario.close();
+            entrada.close();
         }
       }
 
@@ -86,7 +87,7 @@ void Grupo:: MostrarGrupo(int NumGrupo){
 
 
                 }
-
+                entrada.close();
             }
         }
         else{                                     // Si no abre el fichero, se imprime un mensaje de error
@@ -124,7 +125,7 @@ void Grupo:: BorrarIntegrante(string DNI){            //Funciona
                 aux.SetGrupo(0);
                 int n=aux.GetGrupo();
                 secundario<<n<<' ';
-                getline(entrada,linea, ' ');
+                getline(entrada,linea, '\n');
                 secundario << linea <<endl;
                   }
                 else{
@@ -148,7 +149,8 @@ void Grupo:: BorrarIntegrante(string DNI){            //Funciona
 
 
               rename("Temporal.bin", "Alumnos.bin");
-
+              secundario.close();
+              entrada.close();
           }
         }
 
@@ -158,3 +160,129 @@ void Grupo:: BorrarIntegrante(string DNI){            //Funciona
           cout<<"El fichero no se abrió correctamente"<<endl;
         }
   }
+
+
+int ContarMiembros(int NumGrupo){
+
+    string linea;
+    int NumMiembros=0;
+      ifstream entrada;
+
+      entrada.open("Alumnos.bin", ios::in| ios::binary);
+
+
+      if(entrada.is_open()){
+        while(getline(entrada,linea, ' ')){
+              getline(entrada,linea, ' ');
+              getline(entrada,linea, ' ');
+              getline(entrada,linea, ' ');
+              getline(entrada,linea, ' ');
+              getline(entrada,linea, ' ');
+              getline(entrada,linea, ' ');
+                if(atoi(linea.c_str())==NumGrupo){
+                    NumMiembros++;
+                }
+              getline(entrada,linea,'\n');
+
+        }
+      entrada.close();
+    }
+  return NumMiembros;
+}
+
+void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){
+    Alumno aux;
+    Grupo aux2;
+      string linea;
+        ifstream entrada;
+        ofstream secundario;
+        entrada.open("Alumnos.bin", ios::in| ios::binary);
+        secundario.open("Temporal.bin", ios::out | ios::binary);
+
+
+          if(NumMiembros<3){
+
+                  while(getline(entrada,linea, ' ')){
+                    if(linea==DNI){
+
+                      secundario << linea << ' ';               // Escribimos lo que hay en linea en el fichero, junto a un espacio
+                      getline(entrada,linea, ' ');
+                      secundario << linea << ' ';               //Realizamos esto hasta que finalice la linea del fichero que estamos leyendo
+                      getline(entrada,linea, ' ');
+                      secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                      secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                      secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                      secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                      aux.SetGrupo(NumGrupo);
+                      int n=aux.GetGrupo();
+                      secundario<<n<<' ';
+                      getline(entrada,linea, '\n');
+                      secundario << linea <<endl;
+                    }
+
+                    else{
+                                                                  //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea.
+                        secundario << linea << ' ';                             // Escribimos lo que hay en linea en el fichero, junto a un espacio
+                      getline(entrada,linea, ' ');
+                        secundario << linea << ' ';                             //Realizamos esto hasta que finalice la linea del fichero que estamos leyendo
+                      getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                      getline(entrada,linea, ' ');
+                        secundario << linea << ' ';
+                      getline(entrada,linea, '\n');                       //Finaliza la linea del fichero
+                        secundario << linea <<endl;
+                  }
+                }
+
+
+            if(NumMiembros>=3){
+                  cout<<"El grupo está completo"<<endl;
+                  exit(-1);
+
+            secundario.close();
+            entrada.close();
+          }
+}
+            else{
+                  cout<<"Error al abrir el fichero"<<endl;
+              }
+
+}
+
+
+/*
+
+   void Grupo:: ModificarLider(string DNI,int NumGrupo){
+     Alumno aux;
+      string Lider_Grupo;
+      string linea;
+        ifstream entrada;
+        entrada.open("Alumnos.bin", ios::in|ios::binary);
+        if(entrada.is_open()){
+          while(getline(entrada,linea,' ')){
+                if((linea.c_str())==DNI){
+                  if(atoi(linea.c_str())==NumGrupo){
+                    aux.setLider(DNI);
+
+
+            }
+          }
+        }
+      }
+                else{
+                          cout<<"Error al abrir el fichero"<<endl;
+
+                }
+                }
+
+                */

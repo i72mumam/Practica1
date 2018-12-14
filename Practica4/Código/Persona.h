@@ -33,11 +33,17 @@ public:
 inline void SetDNI(string DNI){DNI=DNI_;}
 inline string GetDNI(){ return DNI_;}
 
-//inline void SetNombreCompleto(string NombreCompleto){NombreCompleto=NombreCompleto_;}
-//inline string GetNombreCompleto(){return NombreCompleto_;}
+inline void SetNombre(string Nombre){Nombre=Nombre_;}
+inline string GetNombre(){return Nombre_;}
+
+inline void SetApellido1(string Apellido1){Apellido1=Apellido1_;}
+inline string GetApellido1(){return Apellido1_;}
+
+inline void SetApellido2(string Apellido2){Apellido2=Apellido2_;}
+inline string GetApellido2(){return Apellido2_;}
 
 inline void SetEdad(int Edad){Edad=Edad_;}
-inline int Getedad(){ return Edad_;}
+inline int GetEdad(){ return Edad_;}
 
 inline void SetEmail(string Email){Email=Email_;}
 inline string GetEmail(){return Email_;}
