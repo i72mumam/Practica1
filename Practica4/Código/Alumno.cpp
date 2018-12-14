@@ -2,6 +2,7 @@
 #include "Alumno.h"
 #include "Agenda.h"
 #include "Persona.h"
+#include <fstream>
 
 using namespace std;
 
@@ -20,6 +21,7 @@ string linea;
 
         }
       else {
+        entrada>> linea;
         cout<<"El alumno se guarda en la base de datos"<<endl;
 
 }
@@ -113,18 +115,22 @@ void Agenda::MostrarAlumno(string DNI){
                 case 1:
                   cout<<"Introducir nuevo DNI"<<endl;
                   cin>>DNI;
+                  entrada>>DNI;
                 break;
                 case 2:
                   cout<<"Introducir nuevo Email"<<endl;
                   cin>>Email_;
+                  entrada>>Email_;
                 break;
                 case 3:
                   cout<<"Introducir nuevo NombreCompleto"<<endl;
                   cin>> NombreCompleto_;
+                  entrada>>NombreCompleto_;
                 break;
                 case 4:
                   cout<<"Introducir nueva Edad"<<endl;
                   cin>>Edad_;
+                  entrada>>Edad_;
                   break;
               }
           }

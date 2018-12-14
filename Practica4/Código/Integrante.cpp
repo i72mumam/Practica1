@@ -1,6 +1,7 @@
 #include "Grupo.h"
 #include "Alumno.h"
 #include "Persona.h"
+#include <fstream>
 
 using namespace std;
 Grupo aux;
@@ -17,6 +18,8 @@ bool Grupo:: AnadirIntegrante(string DNI, int NumGrupo){
                 return false;
             }
           }else{
+                entrada>>NumGrupo;
+                entrada>>DNI;
                 return true;
           }
           }
