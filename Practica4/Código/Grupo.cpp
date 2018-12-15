@@ -9,16 +9,17 @@
 
 using namespace std;
 
-void Grupo:: BorrarGrupo(int NumGrupo){     //Funciona
+//Borrar Grupo
+void Grupo:: BorrarGrupo(int NumGrupo){
 
-  Alumno aux;
-  string linea;
-    ifstream entrada;
+  Alumno aux;   //Auxiliar del constructor
+  string linea;   //Declaramos un string para leer el fichero
+    ifstream entrada;   //Declaramos un fichero de lectura y otro de salida
     ofstream secundario;
-    entrada.open("Alumnos.bin", ios::in| ios::binary);
+    entrada.open("Alumnos.bin", ios::in| ios::binary);    //Abrimos ambos ficheros
     secundario.open("Temporal.bin",ios::out|ios::binary);
 
-      if(entrada.is_open()){
+      if(entrada.is_open()){    //Comprobación de si el fichero está abierto
 
         if(secundario.is_open()){
           while(getline(entrada,linea, ' ')){
@@ -35,7 +36,7 @@ void Grupo:: BorrarGrupo(int NumGrupo){     //Funciona
             secundario << linea << ' ';
             getline(entrada,linea, ' ');
 
-              if(atoi(linea.c_str())==NumGrupo){
+              if(atoi(linea.c_str())==NumGrupo){    //Si el numero de grupo introducido corresponde con alguno en el fichero, se borra el grupo
                     aux.SetGrupo(0);
                     int n=aux.GetGrupo();
                     secundario<<n<<' ';
@@ -103,19 +104,20 @@ void Grupo:: MostrarGrupo(int NumGrupo){
         }
 }
 
-void Grupo:: BorrarIntegrante(string DNI){            //Funciona
+// Borrar integrante de un grupo
+void Grupo:: BorrarIntegrante(string DNI){
   Alumno aux;
-    string linea;
-      fstream entrada;
+    string linea;   //Declaramos el string para recorrer el fichero
+      fstream entrada;    //Declaramos un fichero de lectura y de salida, ambos en binario
       ofstream secundario;
-      entrada.open("Alumnos.bin", ios::in | ios::binary);
+      entrada.open("Alumnos.bin", ios::in | ios::binary);   //Abrimos ambos ficheros
       secundario.open("Temporal.bin",ios::out|ios::binary);
 
-        if(entrada.is_open()){
+        if(entrada.is_open()){    //Comprobamos si ambos ficheros están abiertos
 
           if(secundario.is_open()){
-            while(getline(entrada,linea, ' ')){
-              if(linea==DNI){
+            while(getline(entrada,linea, ' ')){   //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
+              if(linea==DNI){   //Si lo introducido corresponde con un DNI que exista en el fichero
 
                 secundario << linea << ' ';               // Escribimos lo que hay en linea en el fichero, junto a un espacio
                 getline(entrada,linea, ' ');
@@ -129,7 +131,7 @@ void Grupo:: BorrarIntegrante(string DNI){            //Funciona
                 getline(entrada,linea, ' ');
                 secundario << linea << ' ';
                 getline(entrada,linea, ' ');
-                aux.SetGrupo(0);
+                aux.SetGrupo(0);                          //Borrar al alumno del grupo
                 int n=aux.GetGrupo();
                 secundario<<n<<' ';
                 getline(entrada,linea, '\n');
@@ -145,62 +147,63 @@ void Grupo:: BorrarIntegrante(string DNI){            //Funciona
 
 
           }
-          rename("Temporal.bin", "Alumnos.bin");
-          secundario.close();
+          rename("Temporal.bin", "Alumnos.bin");      //Se cambian los datos de los ficheros
+          secundario.close();     //Se cierran los ficheros
           entrada.close();
         }
 
       }
 
-        else{
+        else{   //Si el fichero no se abre
           cout<<"El fichero no se abrió correctamente"<<endl;
         }
   }
 
+//Contar los miembros que hay en un grupo
+int Grupo::ContarMiembros(int NumGrupo){          /
 
-int Grupo::ContarMiembros(int NumGrupo){          //Funciona
+    string linea; //Declaramos un string para leer el fichero
+    int NumMiembros=0;    //El valor inicial es de 0 miembros
+      ifstream entrada;   //Declaramos un fichero binario
 
-    string linea;
-    int NumMiembros=0;
-      ifstream entrada;
-
-      entrada.open("Alumnos.bin", ios::in| ios::binary);
+      entrada.open("Alumnos.bin", ios::in| ios::binary);    //Abrimos el fichero binario
 
 
-      if(entrada.is_open()){
-        while(getline(entrada,linea, ' ')){
+      if(entrada.is_open()){      //Comprobación de si está abierto el fichero
+        while(getline(entrada,linea, ' ')){   //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
               getline(entrada,linea, ' ');
               getline(entrada,linea, ' ');
               getline(entrada,linea, ' ');
               getline(entrada,linea, ' ');
               getline(entrada,linea, ' ');
               getline(entrada,linea, ' ');
-                if(atoi(linea.c_str())==NumGrupo){
+                if(atoi(linea.c_str())==NumGrupo){    //Si el numero de grupo introducido corresponde con alguno en el fichero, se empieza a sumar 1 a la variable NumMiembros
                     NumMiembros++;
                 }
               getline(entrada,linea,'\n');
 
         }
-      entrada.close();
+      entrada.close();    //Cerrar fichero
     }
-  return NumMiembros;
+  return NumMiembros;   //Devuelve el valor de la variable NumMiembros
 }
 
-void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        //Funciona
+//Añadir Integrante al grupo
+void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){
     Alumno aux;
-      string linea;
-        ifstream entrada;
+      string linea;   //Declaramos un string para leer el fichero
+        ifstream entrada;   //Declaramos un fichero de lectura y otro de salida
         ofstream secundario;
-        entrada.open("Alumnos.bin", ios::in| ios::binary);
+        entrada.open("Alumnos.bin", ios::in| ios::binary);    //Abrimos ambos ficheros binarios
         secundario.open("Temporal.bin", ios::out | ios::binary);
-        if(entrada.is_open()){
+        if(entrada.is_open()){    //Comprobación de si ambos ficheros están abiertos
 
           if(secundario.is_open()){
 
-            if(NumMiembros<3){
+            if(NumMiembros<3){      //Si el numero de miembros es inferior a 3, se puede añadir el integrante
 
-                  while(getline(entrada,linea, ' ')){
-                    if(linea==DNI){
+                  while(getline(entrada,linea, ' ')){   //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
+                    if(linea==DNI){   //Si el valor introducido corresponde con el DNI de algun alumno
 
                       secundario << linea << ' ';               // Escribimos lo que hay en linea en el fichero, junto a un espacio
                       getline(entrada,linea, ' ');
@@ -214,7 +217,7 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
                       getline(entrada,linea, ' ');
                       secundario << linea << ' ';
                       getline(entrada,linea, ' ');
-                      aux.SetGrupo(NumGrupo);
+                      aux.SetGrupo(NumGrupo);                   //Asignamos el alumno el grupo
                       int n=aux.GetGrupo();
                       secundario<<n<<' ';
                       getline(entrada,linea, '\n');
@@ -244,15 +247,15 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
                 }
             }
 
-            if(NumMiembros>=3){
+            if(NumMiembros>=3){   //Si el numero de miembros es mayor o igual a 3 no se puede añadir más integrantes
                   cout<<"El grupo está completo"<<endl;
 
             }
-            secundario.close();
+            secundario.close();   //Se cierra ambos ficheros
             entrada.close();
-            rename("Temporal.bin","Alumnos.bin");
+            rename("Temporal.bin","Alumnos.bin");   //Se modifica ambos ficheros
         }
-            else{
+            else{     //Si no se abren ambos ficheros se muestra un mensaje de error
                   cout<<"Error al abrir el fichero"<<endl;
               }
 
@@ -260,17 +263,17 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
 }
 
 
-
-   void Grupo:: ModificarLider(string DNI,int NumGrupo){        //Funciona
-      string linea, p;
+//Modificar Lider de un grupo
+   void Grupo:: ModificarLider(string DNI,int NumGrupo){
+      string linea, p;    //Se declara un fichero de lectura, uno de salida y string para recorrer los ficheros
         ifstream entrada;
         ofstream secundario;
-        entrada.open("Alumnos.bin", ios::in|ios::binary);
+        entrada.open("Alumnos.bin", ios::in|ios::binary);     //Se abren ambos ficheros binarios
           secundario.open("Temporal.bin", ios::out | ios::binary);
-        if(entrada.is_open()){
+        if(entrada.is_open()){      //Comprobación de si los ficheros están abiertos
           if(secundario.is_open()){
-          while(getline(entrada,linea,' ')){
-              if(linea==DNI){
+          while(getline(entrada,linea,' ')){      //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
+              if(linea==DNI){     //Si los datos introducidos se corresponde con algun DNI que haya en el fichero
 
                   secundario << linea << ' ';               // Escribimos lo que hay en linea en el fichero, junto a un espacio
                 getline(entrada,linea, ' ');
@@ -305,7 +308,7 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
               getline(entrada,linea, ' ');
                 secundario << linea << ' ';
               getline(entrada,linea, ' ');
-                if(atoi(linea.c_str())==NumGrupo){
+                if(atoi(linea.c_str())==NumGrupo){        //Si el numero de grupo corresponde con alguno
                   secundario << linea << ' ';
                 getline(entrada,linea,'\n');
                     p="False";
@@ -320,15 +323,15 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
               }
             }
           }
-          else{
+          else{     //Si no existe el alumno o grupo
               cout<<"Error al modificar lider"<<endl;
               exit(-1);
           }
-          secundario.close();
+          secundario.close();     //Se cierran ambos ficheros binarios
           entrada.close();
-          rename("Temporal.bin","Alumnos.bin");
+          rename("Temporal.bin","Alumnos.bin");     //Se modifica ambos ficheros
         }
-                else{
+                else{     //Si no se abren ambos ficheros se muestran un mensaje de error
                           cout<<"Error al abrir el fichero"<<endl;
 
                 }

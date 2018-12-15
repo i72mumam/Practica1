@@ -5,14 +5,15 @@
 #include "Grupo.h"
 
 
-
+//Mostrar Alumno
+//Muestra por pantalla el alumno
 void Agenda::MostrarAlumno(string DNI){
-string linea;
-  ifstream entrada;
-  entrada.open("Alumnos.bin", ios::in| ios::binary);
-    if(entrada.is_open()){
-      while(getline(entrada,linea, ' ')){
-        if(linea==DNI){
+string linea;     //Declaramos un string para leer el fichero
+  ifstream entrada; //Declaramos el fichero
+  entrada.open("Alumnos.bin", ios::in| ios::binary);    //  Abrimos el fichero binario
+    if(entrada.is_open()){    //Comprobamos si el fichero está abierto
+      while(getline(entrada,linea, ' ')){   //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
+        if(linea==DNI){   //Si el valor introducido es igual al DNI, mostrar por pantalla el alumno
             cout<<linea<<' ';
         getline(entrada,linea, ' ');
           cout<<linea<<' ';
@@ -31,9 +32,9 @@ string linea;
         }
         getline(entrada,linea,'\n');
       }
-    entrada.close();
+    entrada.close();    //Cerramos el fichero
     }
-    else{
+    else{   //Si no se abre el fichero
     	cout<<" El fichero no se abrió correctamente"<<endl;
 	}
 }
@@ -42,18 +43,18 @@ string linea;
 
 
 
+//Modificar alumno
+void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){
+   string  linea;   //Declaramos el string para leer el fichero
+   ifstream entrada;    //Declaramos un fichero de lectura
+   ofstream secundario;   //Declaramos un fichero de salida
+   entrada.open("Alumnos.bin",ios::in|ios::binary);   //Abrimos el fichero binario
+   secundario.open("Temporal.bin", ios::out | ios::binary);   //Abrimos el fichero binario
+   if(entrada.is_open()){   //Comprobación de fichero
+     if(secundario.is_open()){    //Comprobación de fichero
+      while(getline(entrada,linea, ' ')){   //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
 
-void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){     //Funciona
-   string  linea;
-   ifstream entrada;
-   ofstream secundario;
-   entrada.open("Alumnos.bin",ios::in|ios::binary);
-   secundario.open("Temporal.bin", ios::out | ios::binary);
-   if(entrada.is_open()){
-     if(secundario.is_open()){
-      while(getline(entrada,linea, ' ')){
-
-              if(linea==DNI){
+              if(linea==DNI){   //Si el DNI introducido corresponde con alguno del fichero, se pide por pantalla para modificar el alumno
                   secundario << DNI <<' ';
                   secundario << Nombre <<' ';
                   secundario << Apellido1<<' ';
@@ -88,16 +89,16 @@ void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string A
           }
               rename("Temporal.bin", "Alumnos.bin");
 
-                secundario.close();
+                secundario.close();   //Cerramos el fichero
 
       }
-          else{
+          else{   //Si hay algún error al modificar el alumno
               cout<<"No se modificó correctamente"<<endl;
               exit(-1);
       }
     }
 
-   else{
+   else{    //Si no se abren los ficheros
         cout<<"Error al abrir el fichero"<<endl;
         exit(-1);
    }
@@ -105,17 +106,17 @@ void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string A
 
 
 
-
-void Agenda::BorrarAlumno(string DNI){          //Funciona
-  string linea;
-   ifstream entrada;
-    ofstream secundario;
-   entrada.open("Alumnos.bin", ios::in| ios::binary);
+//Borrar Alumno
+void Agenda::BorrarAlumno(string DNI){
+  string linea;   //Declaramos un string para leer el fichero
+   ifstream entrada;    //Declaramos un fichero de lectura
+    ofstream secundario;    //Declaramos un fichero de salida
+   entrada.open("Alumnos.bin", ios::in| ios::binary);   //Abrimos ambos ficheros
    secundario.open("Temporal.bin", ios::out|ios::binary);
-     if(entrada.is_open()){
+     if(entrada.is_open()){   //Comprobamos si ambos ficheros se han abierto
       if(secundario.is_open()){
-       while(getline(entrada,linea, ' ')){
-           if(linea==DNI){
+       while(getline(entrada,linea, ' ')){    //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
+           if(linea==DNI){                //Si lo introducido por teclado es igual a un DNI del fichero se borra el alumno
                getline(entrada,linea,'\n');
           }
 
@@ -140,10 +141,10 @@ void Agenda::BorrarAlumno(string DNI){          //Funciona
           rename("Temporal.bin","Alumnos.bin");
 
            }
-       }
+       }    //Si el DNI introducido no corresponde con ninguno del fichero
       else{ cout<<"No se borro el alumno correctamente"<<endl;}
     }
-     else{
+     else{      //Si el fichero no está abierto
 cout<<"El fichero no se abrió correctamente"<<endl;
 }
 }
@@ -151,16 +152,16 @@ cout<<"El fichero no se abrió correctamente"<<endl;
 
 
 
+//Insertar Alumno
+void Agenda::InsertarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){
+  string linea;   //Declaramos un string para leer el fichero
+  fstream entrada;    //Declaramos un fichero binario de lectura
+  ofstream secundario;    //Declaramos un fichero binario de salida
+  entrada.open("Alumnos.bin", ios::in| ios::out| ios::binary);    //Abrimos el fichero binario
+    if(entrada.is_open()){    //Comprobamos que el fichero está abierto
+          entrada.seekg(0,entrada.end);   //Se añade el alumno
 
-void Agenda::InsertarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){      //Funciona
-  string linea;
-  fstream entrada;
-  ofstream secundario;
-  entrada.open("Alumnos.bin", ios::in| ios::out| ios::binary);
-    if(entrada.is_open()){
-          entrada.seekg(0,entrada.end);
-
-
+                // Se insertan los datos del alumno
                 entrada << DNI << ' ';
                 entrada << Nombre << ' ';
                 entrada << Apellido1 << ' ';
@@ -170,11 +171,11 @@ void Agenda::InsertarAlumno(string DNI,string Nombre,string Apellido1, string Ap
                 entrada << Grupo << ' ';
                 entrada << "False" << '\n';
 
-        entrada.close();
+        entrada.close();    //Cerramos el fichero
 
 
   }
-  else{
+  else{   //Si no se abre el fichero
       cout<<"El fichero no se abrió correctamente"<<endl;
   }
 }
@@ -182,30 +183,30 @@ void Agenda::InsertarAlumno(string DNI,string Nombre,string Apellido1, string Ap
 
 
 
-
-bool Agenda::ExisteAlumno(string DNI){          //Funciona
-  string linea;
-  ifstream entrada;
-  entrada.open("Alumnos.bin", ios::in| ios::binary);
-    if(entrada.is_open()){
-      while(getline(entrada,linea, ' ')){
-        if(linea==DNI){
+//Comprobar si existe un alumno
+bool Agenda::ExisteAlumno(string DNI){
+  string linea;   //Declaramos un string para leer el fichero
+  ifstream entrada;   //Declaramos un fichero
+  entrada.open("Alumnos.bin", ios::in| ios::binary);    //Abrimos el fichero
+    if(entrada.is_open()){    //Comprobación del fichero
+      while(getline(entrada,linea, ' ')){   //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
+        if(linea==DNI){   //Si lo introducido se corresponde con un DNI del fichero, se cierra el fichero
           entrada.close();
           return true;
         }
 
-        else{
+        else{   //Si no corresponde con ningún DNI
             getline(entrada,linea,'\n');
         }
       }
 
- 	        entrada.close();
+ 	        entrada.close();    //Se cierra el fichero
 
           return false;
 
     }
 
-    else {
+    else {    //Si no se abre el fichero
     	cout<<" El fichero no se abrió correctamente"<<endl;
       exit(-1);
     }
@@ -215,14 +216,14 @@ bool Agenda::ExisteAlumno(string DNI){          //Funciona
 
 
 
-
-void Agenda::MostrarTodosAlumnos(){     //Funciona
-  string linea;
-    ifstream entrada;
-    entrada.open("Alumnos.bin", ios::in| ios::binary);
-      if(entrada.is_open()){
-        while(getline(entrada,linea, ' ')){
-            cout<<linea<<' ';
+//Mostrar todos los alumnos
+void Agenda::MostrarTodosAlumnos(){
+  string linea;   //Declaramos un string para leer el fichero
+    ifstream entrada;   //Declaramos un fichero
+    entrada.open("Alumnos.bin", ios::in| ios::binary);    //Abrimos el fichero binario
+      if(entrada.is_open()){    //Comprobación del fichero si está abierto
+        while(getline(entrada,linea, ' ')){   //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea
+            cout<<linea<<' ';   //Se muestran por pantalla todos los alumnos
           getline(entrada,linea, ' ');
             cout<<linea<<' ';
           getline(entrada,linea, ' ');
@@ -238,33 +239,33 @@ void Agenda::MostrarTodosAlumnos(){     //Funciona
           getline(entrada,linea, '\n');
             cout<<linea<<endl;
         }
-        entrada.close();
+        entrada.close();    //Se cierra el fichero
       }
-      else{
+      else{   //Si no se abre el fichero
           cout << "El fichero no se abrió correctamente "<<endl;
       }
   }
 
 
-
-  void Agenda::BorrarTodosAlumnos(){          //Funciona
-    ofstream entrada;
+//Borrar todos los alumnos
+  void Agenda::BorrarTodosAlumnos(){
+    ofstream entrada;   //Declaramos un fichero de lectura y uno de salida
     ifstream secundario;
-    entrada.open("Temporal.bin",ios::out| ios::binary);
+    entrada.open("Temporal.bin",ios::out| ios::binary);   //Abrimos ambos ficheros binarios
     secundario.open("Alumnos.bin",ios::in| ios::binary);
 
-    if(entrada.is_open()){
+    if(entrada.is_open()){    //Comprobación de si están abiertos ambos ficheros
       if(secundario.is_open()){
-        rename("Temporal.bin", "Alumnos.bin");
+        rename("Temporal.bin", "Alumnos.bin");    //Se borran los datos
 
-          secundario.close();
+          secundario.close();   //Se cierra el fichero
       }
       else{
           cout<<"No se borraron los alumnos"<<endl;
       }
-      entrada.close();
+      entrada.close();    //Se cierra el fichero
     }
-      else{
+      else{   // Si no se abren los ficheros
         cout<<"El fichero no se abrió correctamente"<<endl;
     }
   }
