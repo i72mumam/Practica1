@@ -160,7 +160,7 @@ void Grupo:: BorrarIntegrante(string DNI){
   }
 
 //Contar los miembros que hay en un grupo
-int Grupo::ContarMiembros(int NumGrupo){          /
+int Grupo::ContarMiembros(int NumGrupo){          
 
     string linea; //Declaramos un string para leer el fichero
     int NumMiembros=0;    //El valor inicial es de 0 miembros

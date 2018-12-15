@@ -10,7 +10,7 @@ int main(){
 
 int Rolp,Rol;
 int opcion;
-string Usuario, Credencial, DNI, Nombre, Apellido1, Apellido2, Email;
+string Usuariop, Credencialp, Usuario, Credencial, DNI, Nombre, Apellido1, Apellido2, Email;
 int Edad,opcion2, NumGrupo, confirmacion, NumMiembros;
 Profesor p;
 Alumno a;
@@ -19,14 +19,14 @@ Agenda ag;
 
 
 cout<<"Introduzca su Usuario --->";
-cin >> Usuario;
+cin >> Usuariop;
 cout<<endl<<"Introduzca su Credencial --->";
-cin >> Credencial;
+cin >> Credencialp;
 
 
 do{
 
-  Rolp=p.AccederSistema(Usuario, Credencial);
+  Rolp=p.AccederSistema(Usuariop, Credencialp);
 
 cin >> opcion;
 
@@ -125,6 +125,7 @@ cin >> opcion;
         cout<<"3. Modificar Líder"<<endl;
         cout<<"4. Borrar Grupo"<<endl;
         cout<<"5. Mostrar Grupo"<<endl<<endl;
+        cout<<"0. Salir"<<endl<<endl;
         cin >> opcion2;
 
               switch(opcion2){
@@ -138,7 +139,6 @@ cin >> opcion;
 
                 g.AnadirIntegrante(DNI,NumGrupo,NumMiembros);
 
-                cout<<endl<<"Se realizó correctamente"<<endl;
               break;
 
               case 2:
@@ -189,8 +189,8 @@ cin >> opcion;
         break;
     }
     else{
-
-
+      cout<<endl<<"Introduzca el DNI del profesor:  ";
+      cin>>DNI;
       cout<<endl<<"Nombre del profesor:  ";
       cin>>Nombre;
       cout<<endl<<"Primer apellido del profesor:  ";
@@ -305,7 +305,7 @@ cin >> opcion;
       p.MostrarTodosProfesores();
     }
     break;
-    
+
     case 0:
 
         cout<<endl<<"¿Desea salir del sistema? (Si->1//No->0) ";

@@ -28,7 +28,7 @@ void BorrarIntegrante(string DNI);            //Función que borra un integrante
 void ModificarLider(string DNI, int NumGrupo);    //Función que modifica el líder de un grupo
 void BorrarGrupo(int NumGrupo);                   //Función que borra un Grupo
 void MostrarGrupo(int NumGrupo);                  //Función que muestra un Grupo
-int ContarMiembros(int NumGrupo);
+int ContarMiembros(int NumGrupo);                 // Funcion que cuenta los miembros de un grupo
 void AnadirIntegrante(string DNI, int NumGrupo, int NumMiembros);   //Función que añade un integrante al nuevo grupo
 
 };

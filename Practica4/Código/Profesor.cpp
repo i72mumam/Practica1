@@ -234,6 +234,7 @@ void Profesor:: menuAyudante(){               //Funciona
   cout<<"4. Borrar Alumno"<<endl;
   cout<<"5. Mostrar todos los alumnos"<<endl;
   cout<<"6. Modificar grupo"<<endl;
+  cout<<"0. Salir del sistema"<<endl;
 
 }
 
@@ -288,16 +289,16 @@ string linea;                               //Declaramos un fichero de lectura y
 }
 
 
-
+//MostrarTodosProfesores
+// Funcion que muestra todos los profesores que hay en el sistema
 void Profesor:: MostrarTodosProfesores(){
-  string linea;
-    ifstream entrada;
-    entrada.open("Profesores.bin", ios::in| ios::binary);
-      if(entrada.is_open()){
-        while(getline(entrada,linea, ' ')){
-            cout<<linea<<' ';
+  ifstream entrada;
+  entrada.open("Profesores.bin", ios::in| ios::binary);       //Abrimos el fichero en binario
+    if(entrada.is_open()){                                    // Comprobamos si se ha abierto el fichero
+      while(getline(entrada,linea, ' ')){                     // Si el fichero se abre,  leemos hasta el primer espacio y lo guardamos en la variable linea
+            cout<<linea<<' ';                                 // Imprimimos por pantalla la variable linea
           getline(entrada,linea, ' ');
-            cout<<linea<<' ';
+            cout<<linea<<' ';                                 // Realizamos estos pasos hasta que lleguemos al rol del profesor que estamos leyendo
           getline(entrada,linea, ' ');
             cout<<linea<<' ';
           getline(entrada,linea, ' ');
@@ -311,42 +312,43 @@ void Profesor:: MostrarTodosProfesores(){
           getline(entrada,linea, ' ');
             cout<<linea<<' ';
           getline(entrada,linea, '\n');
-              if(atoi(linea.c_str())==1){
+              if(atoi(linea.c_str())==1){                   // Si el rol del profesor es igual a 1, imprimimos "Coordinador" por pantalla
                 cout<<"Coordinador"<<endl;
               }
               else{
-                  cout<<"Ayudante"<<endl;
+                  cout<<"Ayudante"<<endl;                   // Si el rol del profesor es igual a 0, imprimimos "Ayudante" por pantalla
               }
 
 
         }
-        entrada.close();
+        entrada.close();                                  // Cerramos el fichero de entrada
       }
       else{
-          cout << "El fichero no se abrió correctamente "<<endl;
+          cout << "El fichero no se abrió correctamente "<<endl;          // Si no se abre el fichero de lectura, aparece un mensaje de error
       }
   }
 
 
 
 
-void Profesor:: BajaProfesor(string DNI){       //Funciona
-  string linea;
-  ifstream entrada;
+void Profesor:: BajaProfesor(string DNI){
+  ifstream principal;         //Declaramos un fichero de lectura, un fichero de salida y un string para leer los datos
   ofstream secundario;
-    entrada.open("Profesores.bin", ios::in| ios::binary);
-    secundario.open("Temporal.bin", ios::out | ios::binary);
-    if(entrada.is_open()){
-      if(secundario.is_open()){
-        while(getline(entrada,linea, ' ')){
-          if(linea==DNI){
+  string linea;
+  principal.open("Alumnos.bin", ios::in | ios::binary);                 //Abrimos los ficheros, ambos en binario
+  secundario.open("BackupAlumnos.bin", ios::out | ios:: binary);
+
+    if(principal.is_open()){                                // Comprobamos si los ficheros se han abierto
+        if(secundario.is_open()){
+            while(getline(principal,linea,' ')){          //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea.
+          if(linea==DNI){                                 // Si la variable linea es igual al DNI del profesor que queremos dar de baja, recorre la linea hasta el final
               getline(entrada,linea,'\n');
           }
-          else{
+          else{                                           // Si la variable linea es distinta al DNI, escribimos dicha variable en un fichero secundario
               secundario<< linea <<' ';
-            getline(entrada,linea,' ');
+            getline(entrada,linea,' ');                   // Leemos hasta el siguiente espacio y lo guardamos en la variable linea
               secundario << linea << ' ';
-            getline(entrada,linea, ' ');
+            getline(entrada,linea, ' ');                  //Realizamos esto hasta el final de la linea
               secundario << linea <<' ';
             getline(entrada,linea, ' ');
               secundario << linea <<' ';
@@ -363,13 +365,13 @@ void Profesor:: BajaProfesor(string DNI){       //Funciona
           }
         }
       }
-          else{
+          else{                                            // Si no se abre el fichero secundario, se mostrará un mensaje de error
               cout<<"No se pudo dar de baja al profesor"<<endl;
           }
 
-      entrada.close();
+      entrada.close();                                    // Cerramos los ficheros
       secundario.close();
-      rename("Temporal.bin","Profesores.bin");
+      rename("Temporal.bin","Profesores.bin");            // Renombramos el fichero secundario con el nombre del fichero principal
     }
       else{
             cout<<"Error al abrir el fichero"<<endl;
@@ -378,16 +380,16 @@ void Profesor:: BajaProfesor(string DNI){       //Funciona
 
 
 
-
-
+//AltaProfesor
+//Funcion que introduce los datos de un profesor en el sistema
 void Profesor:: AltaProfesor(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, string Usuario, string Credencial, int Rol){      // Funciona
-    string linea;
-    fstream entrada;
-    entrada.open("Profesores.bin", ios::in |ios::out | ios::binary);
-    if(entrada.is_open()){
-      entrada.seekg(0,entrada.end);
+    string linea;                                               //Declaramos un fichero de lectura y un string para leer datos
+    ifstream entrada;
+    entrada.open("Profesores.bin", ios::in| ios::binary);       // Abrimos el fichero en binario
+      if(entrada.is_open()){                                    // Comprobamos si se ha abierto el fichero
+      entrada.seekg(0,entrada.end);                             // Colocamos el cursor al principio del fichero
 
-            entrada << DNI << ' ';
+            entrada << DNI << ' ';                              // Introducimos en el fichero las variables introducidas al principio de la funcion
             entrada << Nombre << ' ';
             entrada << Apellido1 << ' ';
             entrada << Apellido2 << ' ';
@@ -404,9 +406,8 @@ void Profesor:: AltaProfesor(string DNI,string Nombre,string Apellido1, string A
 }
 
 
-
-
-void Profesor::BorrarTodosProfesores(){          //Funciona
+/*
+void Profesor::BorrarTodosProfesores(){
   ofstream entrada;
   ifstream secundario;
   entrada.open("Temporal.bin",ios::out| ios::binary);
@@ -427,3 +428,4 @@ void Profesor::BorrarTodosProfesores(){          //Funciona
       cout<<"El fichero no se abrió correctamente"<<endl;
   }
 }
+*/
