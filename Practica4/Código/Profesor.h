@@ -37,7 +37,7 @@ inline string GetCredencial(){ return Credencial_;};
 inline void setRol(bool Rol){Rol_=Rol;};
 inline int getRol(){return Rol_;};
 
-void AccederSistema(string Usuario, string Credencial);
+int AccederSistema(string Usuario, string Credencial);
 void AltaProfesor(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, string Usuario, string Credencial, int Rol);
 void BajaProfesor(string DNI);
 void CrearBackupAlumnos();
@@ -47,6 +47,7 @@ void CargarBackupProfesores();
 void menuCoordinador();
 void menuAyudante();
 void MostrarTodosProfesores();
+void BorrarTodosProfesores();
 };
 
 #endif

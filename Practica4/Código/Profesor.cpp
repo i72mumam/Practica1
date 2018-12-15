@@ -121,7 +121,7 @@ secundario.open("Alumnos.bin", ios::out | ios:: binary);
 
   if(principal.is_open()){                                         // Comprobamos si los ficheros se han abierto
     if(secundario.is_open()){
-      while(getline(principal,linea,' ')){                          //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea.
+     while(getline(principal,linea,' ')){                          //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea.
             secundario << linea << ' ';                             // Escribimos lo que hay en linea en el fichero, junto a un espacio
             getline(principal,linea, ' ');
             secundario << linea << ' ';                             //Realizamos esto hasta que finalice la linea del fichero que estamos leyendo
@@ -139,6 +139,7 @@ secundario.open("Alumnos.bin", ios::out | ios:: binary);
             secundario << linea <<endl;
 
         }
+
     secundario.close();                                         // Cerramos el fichero de escritura
     }
     else{                                               // Si no se abre el fichero de escritura, aparece un mensaje de error
@@ -218,6 +219,8 @@ void Profesor:: menuCoordinador(){
   cout<<"9. Guardar Backup"<<endl;
   cout<<"10. Cargar Backup"<<endl;
   cout<<"11. Borrar todos los alumnos"<<endl;
+  cout<<"12. Mostrar todos los profesores"<<endl;
+  cout<<"0. Salir del sistema"<<endl;
 }
 
 
@@ -238,7 +241,7 @@ void Profesor:: menuAyudante(){               //Funciona
 
 //AccederSistema
 // Permite al usuario acceder al sistema mediante su usuario y credencial, ambas introducidas por teclado
-void Profesor:: AccederSistema(string Usuario, string Credencial){
+int Profesor:: AccederSistema(string Usuario, string Credencial){
 
 string linea;                               //Declaramos un fichero de lectura y un string para recorrerlo
   ifstream entrada;
@@ -263,11 +266,15 @@ string linea;                               //Declaramos un fichero de lectura y
                         if(atoi(linea.c_str())==1){       // Transformamos línea, que es de tipo string, a un entero, y si línea es igual 1, cargamos la funcion menuCoordinador()
 
                             menuCoordinador();
+
+                            return 1;
                         }
 
                         else{                           // Si linea no es igual a 1, cargamos la función menuAyudante()
 
                             menuAyudante();
+
+                            return 0;
                         }
                   }
               }
@@ -323,8 +330,7 @@ void Profesor:: MostrarTodosProfesores(){
 
 
 
-void Profesor:: BajaProfesor(string DNI){
-Profesor aux;
+void Profesor:: BajaProfesor(string DNI){       //Funciona
   string linea;
   ifstream entrada;
   ofstream secundario;
@@ -375,7 +381,6 @@ Profesor aux;
 
 
 void Profesor:: AltaProfesor(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, string Usuario, string Credencial, int Rol){      // Funciona
-    Agenda aux;
     string linea;
     fstream entrada;
     entrada.open("Profesores.bin", ios::in |ios::out | ios::binary);
@@ -396,4 +401,29 @@ void Profesor:: AltaProfesor(string DNI,string Nombre,string Apellido1, string A
       else{
           cout<<"Error al abrir el fichero"<<endl;
       }
+}
+
+
+
+
+void Profesor::BorrarTodosProfesores(){          //Funciona
+  ofstream entrada;
+  ifstream secundario;
+  entrada.open("Temporal.bin",ios::out| ios::binary);
+  secundario.open("Profesores.bin",ios::in| ios::binary);
+
+  if(entrada.is_open()){
+    if(secundario.is_open()){
+          rename("Temporal.bin","Profesores.bin");
+        secundario.close();
+    }
+    else{
+        cout<<"No se borraron los alumnos"<<endl;
+    }
+    entrada.close();
+
+  }
+    else{
+      cout<<"El fichero no se abrió correctamente"<<endl;
+  }
 }

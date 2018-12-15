@@ -6,7 +6,7 @@
 
 
 
-void Agenda::MostrarAlumno(string DNI){ //Funciona
+void Agenda::MostrarAlumno(string DNI){
 string linea;
   ifstream entrada;
   entrada.open("Alumnos.bin", ios::in| ios::binary);
@@ -27,8 +27,9 @@ string linea;
         getline(entrada,linea, ' ');
           cout<<linea<<' ';
         getline(entrada,linea, '\n');
-          cout<<linea<<' ';
+          cout<<linea<<endl;
         }
+        getline(entrada,linea,'\n');
       }
     entrada.close();
     }
@@ -43,9 +44,7 @@ string linea;
 
 
 void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){     //Funciona
-  Alumno aux;
-  int n, f;
-  string a,b, c, d, e, g, linea;
+   string  linea;
    ifstream entrada;
    ofstream secundario;
    entrada.open("Alumnos.bin",ios::in|ios::binary);
@@ -154,7 +153,6 @@ cout<<"El fichero no se abrió correctamente"<<endl;
 
 
 void Agenda::InsertarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){      //Funciona
-  Agenda aux;
   string linea;
   fstream entrada;
   ofstream secundario;
@@ -250,20 +248,22 @@ void Agenda::MostrarTodosAlumnos(){     //Funciona
 
 
   void Agenda::BorrarTodosAlumnos(){          //Funciona
-    string linea;
-    ifstream entrada;
-    string DNI;
-    string NombreCompleto;
-    int Edad;
-    string Email;
+    ofstream entrada;
+    ifstream secundario;
     entrada.open("Temporal.bin",ios::out| ios::binary);
+    secundario.open("Alumnos.bin",ios::in| ios::binary);
 
     if(entrada.is_open()){
-
+      if(secundario.is_open()){
         rename("Temporal.bin", "Alumnos.bin");
 
-          entrada.close();
+          secundario.close();
       }
+      else{
+          cout<<"No se borraron los alumnos"<<endl;
+      }
+      entrada.close();
+    }
       else{
         cout<<"El fichero no se abrió correctamente"<<endl;
     }

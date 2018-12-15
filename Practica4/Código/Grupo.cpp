@@ -47,10 +47,11 @@ void Grupo:: BorrarGrupo(int NumGrupo){     //Funciona
             secundario << linea <<endl;
 
 
-            rename("Temporal.bin", "Alumnos.bin");
-            secundario.close();
-            entrada.close();
+
         }
+        rename("Temporal.bin", "Alumnos.bin");
+        secundario.close();
+        entrada.close();
       }
 
     }
@@ -134,30 +135,19 @@ void Grupo:: BorrarIntegrante(string DNI){            //Funciona
                 getline(entrada,linea, '\n');
                 secundario << linea <<endl;
                   }
-                else{
+              else{
                                                               //Si el fichero se abre, leemos hasta el primer espacio y lo guardamos en la variable linea.
                         secundario << linea << ' ';                             // Escribimos lo que hay en linea en el fichero, junto a un espacio
-                        getline(entrada,linea, ' ');
-                        secundario << linea << ' ';                             //Realizamos esto hasta que finalice la linea del fichero que estamos leyendo
-                        getline(entrada,linea, ' ');
-                        secundario << linea << ' ';
-                        getline(entrada,linea, ' ');
-                        secundario << linea << ' ';
-                        getline(entrada,linea, ' ');
-                        secundario << linea << ' ';
-                        getline(entrada,linea, ' ');
-                        secundario << linea << ' ';
-                        getline(entrada,linea, ' ');
-                        secundario << linea << ' ';
                         getline(entrada,linea, '\n');                       //Finaliza la linea del fichero
                         secundario << linea <<endl;
                 }
 
 
-              rename("Temporal.bin", "Alumnos.bin");
-              secundario.close();
-              entrada.close();
+
           }
+          rename("Temporal.bin", "Alumnos.bin");
+          secundario.close();
+          entrada.close();
         }
 
       }
@@ -198,7 +188,6 @@ int Grupo::ContarMiembros(int NumGrupo){          //Funciona
 
 void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        //Funciona
     Alumno aux;
-    Grupo aux2;
       string linea;
         ifstream entrada;
         ofstream secundario;
@@ -230,6 +219,8 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
                       secundario<<n<<' ';
                       getline(entrada,linea, '\n');
                       secundario << linea <<endl;
+
+                      cout<<endl<<"Se realizó correctamente"<<endl;
                     }
 
                     else{
@@ -255,7 +246,7 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
 
             if(NumMiembros>=3){
                   cout<<"El grupo está completo"<<endl;
-                  exit(-1);
+
             }
             secundario.close();
             entrada.close();
@@ -271,8 +262,6 @@ void Grupo:: AnadirIntegrante(string DNI, int NumGrupo,int NumMiembros){        
 
 
    void Grupo:: ModificarLider(string DNI,int NumGrupo){        //Funciona
-     Alumno aux;
-      string Lider_Grupo;
       string linea, p;
         ifstream entrada;
         ofstream secundario;
