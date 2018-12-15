@@ -1,4 +1,10 @@
+//Funcionan todos
+
+
+
+
 #include "Profesor.h"
+#include "Agenda.h"
 
 //CrearBackup
 //Crea una copia de seguridad de Alumnos.bin
@@ -30,14 +36,18 @@ secundario.open("BackupAlumnos.bin", ios::out | ios:: binary);
               secundario << linea <<endl;
 
         }
-    secundario.close();                               // Cerramos el fichero de escritura
+
+        secundario.close();                               // Cerramos el fichero de escritura
+      cout<<"Se realizó correctamente el backup"<<endl;
+
     }
+
     else{                                             // Si no se abre el fichero de escritura, aparece un mensaje de error
 
       cout<<"No se realizó el backup correctamente"<<endl;
     }
   principal.close();                                  // Cerramos el fichero de lectura
-  }
+}
   else{                                               // Si no se abre el fichero de lectura, aparece un mensaje de error
 
     cout<<"El fichero no se abrió correctamente"<<endl;
@@ -78,19 +88,24 @@ secundario.open("BackupProfesores.bin", ios::out | ios:: binary);
               secundario << linea <<endl;
 
         }
-    secundario.close();                               // Cerramos el fichero de escritura
+
+            secundario.close();                               // Cerramos el fichero de escritura
+            cout<<"Se realizó correctamente el backup"<<endl;
+
     }
+
     else{                                             // Si no se abre el fichero de escritura, aparece un mensaje de error
 
-      cout<<"No se realizó el backup correctamente"<<endl;
+            cout<<"No se realizó el backup correctamente"<<endl;
     }
-  principal.close();                                  // Cerramos el fichero de lectura
-  }
-  else{                                               // Si no se abre el fichero de lectura, aparece un mensaje de error
 
-    cout<<"El fichero no se abrió correctamente"<<endl;
+            principal.close();                                  // Cerramos el fichero de lectura
   }
-}
+    else{                                               // Si no se abre el fichero de lectura, aparece un mensaje de error
+
+            cout<<"El fichero no se abrió correctamente"<<endl;
+    }
+  }
 
 
 
@@ -149,7 +164,7 @@ secundario.open("Alumnos.bin", ios::out | ios:: binary);
   ofstream secundario;
   string linea;
   principal.open("BackupProfesores.bin", ios::in | ios::binary);              //Abrimos los ficheros, ambos en binario
-  secundario.open("Alumnos.bin", ios::out | ios:: binary);
+  secundario.open("Profesores.bin", ios::out | ios:: binary);
 
     if(principal.is_open()){                                         // Comprobamos si los ficheros se han abierto
       if(secundario.is_open()){
@@ -263,4 +278,122 @@ string linea;                               //Declaramos un fichero de lectura y
         }
       }
     }
+}
+
+
+
+void Profesor:: MostrarTodosProfesores(){
+  string linea;
+    ifstream entrada;
+    entrada.open("Profesores.bin", ios::in| ios::binary);
+      if(entrada.is_open()){
+        while(getline(entrada,linea, ' ')){
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, ' ');
+            cout<<linea<<' ';
+          getline(entrada,linea, '\n');
+              if(atoi(linea.c_str())==1){
+                cout<<"Coordinador"<<endl;
+              }
+              else{
+                  cout<<"Ayudante"<<endl;
+              }
+
+
+        }
+        entrada.close();
+      }
+      else{
+          cout << "El fichero no se abrió correctamente "<<endl;
+      }
+  }
+
+
+
+
+void Profesor:: BajaProfesor(string DNI){
+Profesor aux;
+  string linea;
+  ifstream entrada;
+  ofstream secundario;
+    entrada.open("Profesores.bin", ios::in| ios::binary);
+    secundario.open("Temporal.bin", ios::out | ios::binary);
+    if(entrada.is_open()){
+      if(secundario.is_open()){
+        while(getline(entrada,linea, ' ')){
+          if(linea==DNI){
+              getline(entrada,linea,'\n');
+          }
+          else{
+              secundario<< linea <<' ';
+            getline(entrada,linea,' ');
+              secundario << linea << ' ';
+            getline(entrada,linea, ' ');
+              secundario << linea <<' ';
+            getline(entrada,linea, ' ');
+              secundario << linea <<' ';
+            getline(entrada,linea, ' ');
+              secundario << linea <<' ';
+            getline(entrada,linea, ' ');
+              secundario << linea <<' ';
+            getline(entrada,linea, ' ');
+              secundario << linea <<' ';
+            getline(entrada,linea, ' ');
+              secundario << linea << ' ';
+            getline(entrada,linea,'\n');
+              secundario <<linea << endl;
+          }
+        }
+      }
+          else{
+              cout<<"No se pudo dar de baja al profesor"<<endl;
+          }
+
+      entrada.close();
+      secundario.close();
+      rename("Temporal.bin","Profesores.bin");
+    }
+      else{
+            cout<<"Error al abrir el fichero"<<endl;
+    }
+}
+
+
+
+
+
+void Profesor:: AltaProfesor(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, string Usuario, string Credencial, int Rol){      // Funciona
+    Agenda aux;
+    string linea;
+    fstream entrada;
+    entrada.open("Profesores.bin", ios::in |ios::out | ios::binary);
+    if(entrada.is_open()){
+      entrada.seekg(0,entrada.end);
+
+            entrada << DNI << ' ';
+            entrada << Nombre << ' ';
+            entrada << Apellido1 << ' ';
+            entrada << Apellido2 << ' ';
+            entrada << Edad << ' ';
+            entrada << Email << ' ';
+            entrada << Usuario << ' ';
+            entrada << Credencial << ' ';
+            entrada << Rol << ' ';
+
+      }
+      else{
+          cout<<"Error al abrir el fichero"<<endl;
+      }
 }

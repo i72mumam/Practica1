@@ -1,3 +1,5 @@
+//Funcionan todos
+
 #include "Agenda.h"
 #include "Persona.h"
 #include "Grupo.h"
@@ -40,7 +42,7 @@ string linea;
 
 
 
-void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){
+void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, int Grupo){     //Funciona
   Alumno aux;
   int n, f;
   string a,b, c, d, e, g, linea;
@@ -53,33 +55,15 @@ void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string A
       while(getline(entrada,linea, ' ')){
 
               if(linea==DNI){
-                  aux.SetDNI(DNI);
-                  a=aux.GetDNI();
-                  secundario << a <<' ';
-
-                  aux.SetNombre(Nombre);
-                  b=aux.GetNombre();
-                  secundario << b <<' ';
-
-                  aux.SetApellido1(Apellido1);
-                  c=aux.GetApellido1();
-                  secundario << c <<' ';
-
-                  aux.SetApellido2(Apellido2);
-                  d=aux.GetApellido2();
-                  secundario << d <<' ';
-
-                  aux.SetEdad(Edad);
-                  n=aux.GetEdad();
-                  secundario << n <<' ';
-
-                  aux.SetGrupo(Grupo);
-                  f=aux.GetGrupo();
-
-                  aux.SetLider("False");
-                  g=aux.GetLider();
-                  secundario << f <<' '<< g <<endl;
-
+                  secundario << DNI <<' ';
+                  secundario << Nombre <<' ';
+                  secundario << Apellido1<<' ';
+                  secundario << Apellido2 <<' ';
+                  secundario << Edad <<' ';
+                  secundario << Email <<' ';
+                  secundario << Grupo <<' ';
+                  secundario << "False" <<'\n';
+              getline(entrada,linea,'\n');
               }
 
               else{
@@ -101,11 +85,12 @@ void Agenda::ModificarAlumno(string DNI,string Nombre,string Apellido1, string A
                   secundario <<linea << endl;
 
 
+              }
           }
               rename("Temporal.bin", "Alumnos.bin");
 
                 secundario.close();
-        }
+
       }
           else{
               cout<<"No se modificó correctamente"<<endl;

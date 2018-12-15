@@ -38,12 +38,15 @@ inline void setRol(bool Rol){Rol_=Rol;};
 inline int getRol(){return Rol_;};
 
 void AccederSistema(string Usuario, string Credencial);
-void AltaProfesor(string DNI,string NombreCompleto,string Email);
+void AltaProfesor(string DNI,string Nombre,string Apellido1, string Apellido2, int Edad, string Email, string Usuario, string Credencial, int Rol);
 void BajaProfesor(string DNI);
-void CrearBackup();
-void CargarBackup();
+void CrearBackupAlumnos();
+void CrearBackupProfesores();
+void CargarBackupAlumnos();
+void CargarBackupProfesores();
 void menuCoordinador();
 void menuAyudante();
+void MostrarTodosProfesores();
 };
 
 #endif
