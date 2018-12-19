@@ -16,7 +16,8 @@
 **Flujo principal:**
 
   1. El caso de uso empieza cuando el sistema necesita modificar los datos de un alumno.
-  2. El sistema recoge los datos del alumno.
+  2. El sistema ejecuta la función buscar alumno, para localizar al alumno que se desea modificar los datos.
+  3. El sistema recoge los datos del alumno.
 
 **Postcondiciones:**
 
@@ -24,4 +25,4 @@
 
 **Flujos alternativos:**
 
-  2.a. Si no existe el alumno, el sistema muestra un mensaje de error.
+  2.a. Si no existe el alumno, el sistema muestra un mensaje de error y finaliza la función.
