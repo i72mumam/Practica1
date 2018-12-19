@@ -1,4 +1,4 @@
-t## Requisitos
+## Requisitos
 #### Partes interesadas
 1. *Cliente*
 2. *Desarrolladores*
@@ -9,10 +9,7 @@ t## Requisitos
 4. *Líder o no*
 5. *Número equipo*
 6. *e-mail*
-7. *Curso más alto matriculado*
-8. *Teléfono*
-9. *Dirección*
-10. *Fecha nacimiento*
+10. *Edad*
 #### Requisitos funcionales
 1. *Buscar alumno por DNI, nombre y apellido*
 2. *Modificar alumno*

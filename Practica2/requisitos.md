@@ -9,10 +9,7 @@
 4. *Líder o no*
 5. *Número equipo*
 6. *Mail*
-7. *Curso más alto matriculado*
-8. *Teléfono*
-9. *Dirección*
-10. *Fecha nacimiento*
+7. *Edad*
 #### Requisitos funcionales
 1. *Buscar alumno por DNI, nombre y apellido*
 2. *Modificar alumno*
